@@ -60,3 +60,10 @@
 /* Los nombres de modelo no se parten por el guion, salvo en móvil, donde no caben. */
 .nombre { white-space: nowrap; }
 @media (max-width: 720px) { .nombre { white-space: normal; } .cabeza-entrada h1 { font-size: 30px; } }
+
+/* Línea con los colores de la bandera de Sibundoy bajo el nombre del modelo: verde, amarillo y negro, 1 : 1 : 1. */
+.nombre.con-bandera { position: relative; display: inline-block; padding-bottom: 14px; }
+.nombre.con-bandera::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
+  background: linear-gradient(to right, #1E7B34 0 33.333%, #F2D21B 33.333% 66.666%, #1A1714 66.666% 100%);
+}

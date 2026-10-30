@@ -214,6 +214,8 @@ Son ilustraciones generadas con IA. Para la web final se pueden sustituir por fo
 
 **Fila de proyecto.** Nombre en `item-title`, estado a la derecha, descripción en texto secundario y, debajo, la línea de la bandera.
 
+**Línea de la bandera del lugar.** En la entrada del blog que presenta un modelo, bajo su nombre en el título, va una línea de 6 px con los colores de la bandera del lugar que le da nombre. Sibundoy: verde `#1E7B34`, amarillo `#F2D21B` y negro vueltiao `#1A1714`, en franjas iguales, según el dibujo de Flags of the World. Los tonos están ajustados a la paleta de la web; Rubén confirma que se reconocen.
+
 **Estado «Coming soon».** Punto ámbar de 6 px y texto secundario de 14 px.
 
 **Lista de principios.** Número de dos cifras en Atkinson Hyperlegible Mono, a 28 px y en ocre claro; nombre del principio en negrita blanca; explicación en crudo.
