@@ -80,3 +80,10 @@
   background: linear-gradient(to right, #FCD116 0 50%, #003893 50% 75%, #CE1126 75% 100%);
 }
 .tema-c .proyectos li + li { padding-top: 28px; }
+
+/* Redes en el pie: logos oficiales en un solo color, el del texto, como pide el DESIGN.md de ColIA-Local. */
+.tema-c .pie .envoltura { align-items: center; }
+.redes { display: flex; align-items: center; gap: 18px; }
+.redes a { display: inline-flex; color: var(--crudo); opacity: 0.85; text-decoration: none; }
+.redes a:hover { opacity: 1; }
+.redes .idioma-pie { margin-left: 8px; }
