@@ -1,0 +1,62 @@
+/* Blog: índice y entrada. Parte de estilo.css y tierra.css. */
+
+/* Huecos de la maqueta: texto que falta escribir o cifras que falta medir. No forman parte del diseño. */
+.hueco { background: #FFF3C4; outline: 1px dashed #C27C0E; border-radius: 4px; padding: 0 4px; color: #6B4A00; }
+
+/* Cabecera de página, sobre crudo, como el panel de la portada. */
+.cabeza-pagina { background: var(--crudo); color: var(--tinta-sobre-crudo); padding: 64px 0 56px; }
+.cabeza-pagina h1 { font-size: clamp(36px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 16px; }
+.cabeza-pagina p { font-size: 21px; line-height: 1.5; margin: 0; max-width: 46ch; }
+.volver { display: inline-block; margin-bottom: 24px; font-size: 16px; text-decoration-color: rgb(18 18 18 / 0.35); }
+
+/* Índice: filas con fecha, título y resumen. Sin tarjetas. */
+.entradas { list-style: none; margin: 0; padding: 0; }
+.entradas li { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 32px 0; border-bottom: 1px solid var(--linea); }
+@media (min-width: 860px) { .entradas li { grid-template-columns: 160px 1fr; gap: 48px; align-items: baseline; } }
+.entradas time { font-family: "Atkinson Hyperlegible Mono", monospace; font-size: 15px; color: var(--secundario); }
+.entradas h2 { font-size: 26px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; }
+.entradas h2 a { text-decoration: none; }
+.entradas h2 a:hover { text-decoration: underline; text-decoration-color: var(--linea-marcada); }
+.entradas p { margin: 0; color: var(--secundario); max-width: 64ch; }
+.etiqueta { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--verde-cafetal); }
+.entradas .destacada .miniatura { width: 100%; max-width: 640px; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; display: block; margin-bottom: 20px; }
+
+/* Entrada: una columna centrada, cómoda para leer. */
+.articulo { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.cabeza-entrada { background: var(--crudo); color: var(--tinta-sobre-crudo); padding: 56px 0 48px; }
+.cabeza-entrada .etiqueta { margin: 0 0 16px; }
+.cabeza-entrada h1 { font-size: clamp(34px, 4.4vw, 50px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 20px; }
+.cabeza-entrada .entradilla { font-size: 21px; line-height: 1.5; margin: 0 0 24px; }
+.meta { font-size: 15px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.meta span + span::before { content: "·"; margin-right: 16px; }
+
+/* La ilustración de portada empieza dentro del crudo y baja sobre el papel. */
+.figura-portada { max-width: 1080px; margin: -8px auto 0; padding: 0 24px; }
+.figura-portada img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 14px; display: block; }
+.figura-portada figcaption, .articulo figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
+.portada-entrada { position: relative; }
+.portada-entrada::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 50%; background: var(--crudo); }
+.portada-entrada .figura-portada { position: relative; margin: 0 auto; }
+
+.cuerpo { padding: 56px 0 72px; }
+.cuerpo h2 { font-size: 28px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 16px; }
+.cuerpo h2:first-child { margin-top: 0; }
+.cuerpo p, .cuerpo li { max-width: 64ch; }
+.cuerpo table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 17px; }
+.cuerpo th, .cuerpo td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.cuerpo th { font-weight: 600; font-size: 15px; color: var(--secundario); }
+.cuerpo td.cifra { font-family: "Atkinson Hyperlegible Mono", monospace; }
+.cuerpo pre { background: var(--gris-suave); border-radius: 10px; padding: 16px 20px; overflow-x: auto; margin: 24px 0; }
+.cuerpo code { font-family: "Atkinson Hyperlegible Mono", monospace; font-size: 15px; line-height: 1.65; }
+.cuerpo p code { background: var(--gris-suave); border-radius: 4px; padding: 1px 6px; }
+
+/* Cierre de la entrada, sobre crudo: invita a la comunidad. */
+.cierre { background: var(--crudo); color: var(--tinta-sobre-crudo); padding: 48px 0; }
+.cierre h2 { font-size: 24px; font-weight: 600; margin: 0 0 12px; }
+.cierre p { margin: 0 0 16px; }
+.cierre a { color: var(--verde-cafetal); font-weight: 600; text-decoration-color: rgb(47 93 58 / 0.4); }
+
+.cabeza-entrada .etiqueta { display: block; }
+/* Los nombres de modelo no se parten por el guion, salvo en móvil, donde no caben. */
+.nombre { white-space: nowrap; }
+@media (max-width: 720px) { .nombre { white-space: normal; } .cabeza-entrada h1 { font-size: 30px; } }
