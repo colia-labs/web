@@ -35,6 +35,19 @@ npm test         # tests for the language redirect
 
 The design rules are in [`DESIGN.md`](DESIGN.md). The brand rules are in the `colia-labs/colia` repo.
 
+## License
+
+Each part of this repo has its own terms:
+
+| Part | License |
+|---|---|
+| Code: everything in `src/` except `src/content/` and `src/assets/`, plus `functions/`, `herramientas/` and the config files | [MIT](LICENSE) |
+| Texts: the blog posts in `src/content/` and the texts in `src/i18n/textos.ts` | [CC BY 4.0](LICENSE-CONTENT). You can copy, translate and adapt them if you credit ColIA |
+| The ColIA name, the logo and the vueltiao weave | All rights reserved. They are not covered by either license |
+| The illustrations in `src/assets/` and `public/og.png` | Not licensed for reuse. They were generated with Canva |
+| The Atkinson Hyperlegible fonts in `public/fuentes/` | [SIL Open Font License 1.1](public/fuentes/), by their authors |
+| The social network logos | Trademarks of their owners. The drawings come from [Simple Icons](https://simpleicons.org) (CC0) |
+
 ## Español
 
 Web de [ColIA](https://colia.org), un laboratorio y una comunidad colombiana de IA abierta. Hecha con [Astro](https://astro.build) y publicada en Cloudflare Pages.
@@ -43,3 +56,4 @@ Web de [ColIA](https://colia.org), un laboratorio y una comunidad colombiana de 
 - **Textos:** todos están en `src/i18n/textos.ts`, en inglés y en español.
 - **Blog:** cada entrada va en `src/content/blog/en/` y `src/content/blog/es/`, con el mismo nombre de archivo. Con `borrador: true` solo se ve en `npm run dev`.
 - **Diseño:** las reglas están en [`DESIGN.md`](DESIGN.md).
+- **Licencias:** el código va con MIT; los textos, con CC BY 4.0. El nombre ColIA, el logo y el tejido del vueltiao no tienen licencia libre, y las ilustraciones tampoco. Los detalles están en la sección «License».
