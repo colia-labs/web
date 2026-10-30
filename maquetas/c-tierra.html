@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-tema="claro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ColIA · Maqueta C · Tierra</title>
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="tierra.css">
+<script>
+  if (matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.tema = "oscuro";
+</script>
+</head>
+<body class="tema-c">
+
+<header class="cabecera">
+  <div class="envoltura">
+    <a class="firma" href="#"><img src="logo/logo-sobre-crudo.svg" alt=""><span>ColIA</span></a>
+    <nav class="menu">
+      <a href="#work">Work</a>
+      <a href="#principles">How we work</a>
+      <a href="#join">Join</a>
+      <span class="idioma"><b>EN</b> · <a href="#">ES</a></span>
+    </nav>
+  </div>
+</header>
+
+<section class="portada-tierra">
+  <div class="lienzo" role="img" aria-label="Illustration of the Colombian coffee mountains with wax palms and a snow-capped volcano"></div>
+  <div class="panel">
+    <h1>An open-source AI lab and community from Colombia.</h1>
+    <p>We learn by building, and show that Latin America creates too.</p>
+    <div class="acciones">
+      <a class="boton" href="#join">Join the community</a>
+      <a href="https://github.com/colia-labs">See our work on GitHub</a>
+    </div>
+  </div>
+</section>
+<div class="tras-portada"></div>
+
+<section class="seccion" id="work">
+  <div class="envoltura">
+    <h2>What we make</h2>
+    <div class="contenido">
+      <ul class="proyectos">
+        <li>
+          <div class="fila"><h3>ColIA-Local</h3><span class="estado">Coming soon</span></div>
+          <p>An app that runs AI models on your computer. No account, no cloud, no terminal.</p>
+        </li>
+        <li>
+          <div class="fila"><h3>Sibundoy</h3><span class="estado">Coming soon</span></div>
+          <p>A small model that translates English into Spanish.</p>
+          <p class="origen">It's named after Sibundoy, a town in the Sibundoy Valley, Putumayo, where ColIA's founder was born. Our models take the names of places in Colombia.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="tejido"></div>
+
+<section class="seccion principios-tierra" id="principles">
+  <div class="envoltura">
+    <h2>How we work</h2>
+    <div class="contenido">
+      <ol class="principios">
+        <li><span><b>Open.</b> Code, models and recipes are published under open licenses.</span></li>
+        <li><span><b>Measured.</b> Every claim comes with numbers, measured on modest hardware.</span></li>
+        <li><span><b>Bilingual.</b> Everything ships in English and Spanish. The Spanish is native, not a translation.</span></li>
+        <li><span><b>Local.</b> What we make runs on your computer, without depending on a cloud.</span></li>
+        <li><span><b>Community.</b> Anyone who wants to learn, explore or contribute is welcome, whatever they know.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="seccion comunidad-tierra" id="join">
+  <div class="banda" role="img" aria-label="Illustration of Colombian plants and birds: frailejones, an orchid, a hummingbird, a condor, coffee and heliconias"></div>
+  <div class="envoltura">
+    <h2>Join us</h2>
+    <div class="contenido">
+      <p>You don't need to be an expert. ColIA started as one person learning in the open. If you want to learn, find people to build with, or make small things that help, there's room for you.</p>
+      <ul class="enlaces">
+        <li><a href="https://github.com/orgs/colia-labs/discussions">Talk to us in GitHub Discussions</a></li>
+        <li><a href="https://github.com/colia-labs/.github/blob/main/CONTRIBUTING.md">Read the contributing guide</a></li>
+        <li><a href="https://github.com/colia-labs/.github/blob/main/CODE_OF_CONDUCT.md">Read the code of conduct</a> <span class="tenue">— it's short</span></li>
+        <li><span class="tenue">Discord — coming soon</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="contact">
+  <div class="envoltura">
+    <h2>Contact</h2>
+    <div class="contenido">
+      <p>Write to <a class="mono" href="mailto:hola@colia.org">hola@colia.org</a>. We read every message.</p>
+    </div>
+  </div>
+</section>
+
+<div class="tejido oscuro"></div>
+<footer class="pie">
+  <div class="envoltura">
+    <span>ColIA · Colombia</span>
+    <nav>
+      <a href="https://github.com/colia-labs">GitHub</a>
+      <a href="https://huggingface.co/colia-labs">Hugging Face</a>
+      <span><b>EN</b> · <a href="#">ES</a></span>
+    </nav>
+  </div>
+</footer>
+
+<div class="barra-maqueta">
+  <span>Maqueta C</span>
+  <button onclick="const d=document.documentElement.dataset; d.tema = d.tema === 'oscuro' ? 'claro' : 'oscuro'">Claro / oscuro</button>
+  <a href="index.html">Volver</a>
+</div>
+
+</body>
+</html>

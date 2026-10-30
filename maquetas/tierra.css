@@ -1,0 +1,82 @@
+/* Maqueta C · Tierra. Parte de estilo.css y añade ilustraciones y colores de la tierra colombiana.
+   Combinaciones de texto: crudo sobre verde cafetal 5,5 : 1; tinta sobre crudo 13,4 : 1;
+   crudo sobre negro vueltiao 12,8 : 1; verde cafetal sobre crudo 5,5 : 1.
+   La terracota y el ocre solo van en adornos o en cifras grandes (más de 24 px). */
+:root {
+  --verde-cafetal: #2F5D3A;
+  --ocre-claro: #E0B35E;
+  --terracota: #B5573A;
+  --negro-vueltiao: #1A1714;
+}
+
+/* Cabecera crudo con el logo para crudo. */
+.tema-c .cabecera { background: var(--crudo); border-bottom: 0; position: sticky; top: 0; z-index: 5; }
+.tema-c .cabecera .menu a, .tema-c .cabecera .idioma, .tema-c .cabecera .idioma b, .tema-c .firma { color: var(--tinta-sobre-crudo); }
+
+/* Franja tejida: rombos escalonados como los del logo, en negro vueltiao sobre crudo. */
+.tejido {
+  height: 30px;
+  background-color: var(--crudo);
+  background-size: 42px 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='20' shape-rendering='crispEdges'%3E%3Cg fill='%231A1714'%3E%3Crect x='12' y='4' width='4' height='4'/%3E%3Crect x='8' y='8' width='4' height='4'/%3E%3Crect x='16' y='8' width='4' height='4'/%3E%3Crect x='12' y='12' width='4' height='4'/%3E%3Crect x='0' y='8' width='4' height='4'/%3E%3Crect x='24' y='8' width='4' height='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+}
+.tejido.oscuro { background-color: var(--negro-vueltiao); filter: none; }
+.tejido.oscuro { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='20' shape-rendering='crispEdges'%3E%3Cg fill='%23E8D9B3'%3E%3Crect x='12' y='4' width='4' height='4'/%3E%3Crect x='8' y='8' width='4' height='4'/%3E%3Crect x='16' y='8' width='4' height='4'/%3E%3Crect x='12' y='12' width='4' height='4'/%3E%3Crect x='0' y='8' width='4' height='4'/%3E%3Crect x='24' y='8' width='4' height='4'/%3E%3C/g%3E%3C/svg%3E"); }
+
+/* Portada: la ilustración a todo el ancho y el texto en un panel crudo liso, nunca sobre la imagen. */
+.portada-tierra { position: relative; }
+.portada-tierra .lienzo {
+  height: min(72vh, 640px); min-height: 420px;
+  background: var(--crudo) url("imagenes/portada.png") center 40% / cover no-repeat;
+}
+.portada-tierra .panel {
+  position: absolute; left: max(24px, calc((100vw - var(--ancho)) / 2 + 24px)); bottom: -56px;
+  width: min(780px, calc(100vw - 48px)); padding: 36px 44px 32px;
+  background: var(--crudo); color: var(--tinta-sobre-crudo);
+  border-radius: 14px;
+}
+.portada-tierra h1 { font-size: clamp(36px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 16px; }
+.portada-tierra p { font-size: 21px; line-height: 1.5; margin: 0 0 28px; }
+.portada-tierra .boton { background: var(--verde-cafetal); color: #FFFFFF; }
+.portada-tierra .acciones a:not(.boton) { text-decoration-color: rgb(18 18 18 / 0.35); }
+.tras-portada { height: 56px; }
+
+/* Sibundoy: la ilustración del valle junto al texto. */
+.proyectos .con-imagen { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 860px) { .proyectos .con-imagen { grid-template-columns: 240px 1fr; gap: 28px; align-items: start; } }
+.proyectos .con-imagen img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; display: block; }
+.origen { margin-top: 12px; font-size: 16px; color: var(--secundario); }
+
+/* Principios sobre verde cafetal. */
+.tema-c .principios-tierra { background: var(--verde-cafetal); color: var(--crudo); border-top: 0; }
+.tema-c .principios-tierra .principios li::before { color: var(--ocre-claro); font-size: 28px; line-height: 1; padding-top: 0; }
+.tema-c .principios-tierra .principios li { grid-template-columns: 64px 1fr; padding: 16px 0; }
+.tema-c .principios-tierra .principios b { color: #FFFFFF; }
+
+/* Comunidad sobre crudo, con la banda de biodiversidad encima: la ilustración ya trae el fondo crudo. */
+.tema-c .comunidad-tierra { background: var(--crudo); color: var(--tinta-sobre-crudo); border-top: 0; padding-top: 0; }
+.banda { height: 260px; background: var(--crudo) url("imagenes/biodiversidad.png") center / contain repeat-x; margin-bottom: 56px; }
+.tema-c .comunidad-tierra a { color: var(--verde-cafetal); text-decoration-color: rgb(47 93 58 / 0.4); font-weight: 600; }
+.tema-c .comunidad-tierra .tenue { color: var(--tinta-sobre-crudo); }
+
+/* Pie en negro vueltiao. */
+.tema-c .pie { background: var(--negro-vueltiao); color: var(--crudo); border-top: 0; }
+.tema-c .pie a { text-decoration-color: rgb(232 217 179 / 0.4); }
+
+@media (max-width: 720px) {
+  .portada-tierra .lienzo { height: 300px; min-height: 0; }
+  .portada-tierra .panel { position: static; width: auto; border-radius: 0; padding: 32px 24px; }
+  .tras-portada { display: none; }
+  .banda { height: 160px; }
+}
+
+/* Línea con la bandera bajo cada proyecto, en proporción 2 : 1 : 1.
+   Contradice la regla de MARCA.md «la bandera solo dentro del logo»: pendiente de que Rubén decida. */
+.tema-c .proyectos li { border-bottom: 0; position: relative; padding-bottom: 28px; }
+.tema-c .proyectos li::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
+  background: linear-gradient(to right, #FCD116 0 50%, #003893 50% 75%, #CE1126 75% 100%);
+}
+.tema-c .proyectos li + li { padding-top: 28px; }
