@@ -87,3 +87,6 @@
 .redes a { display: inline-flex; color: var(--crudo); opacity: 0.85; text-decoration: none; }
 .redes a:hover { opacity: 1; }
 .redes .idioma-pie { margin-left: 8px; }
+
+/* Solo modo claro. El texto de cada sección arranca en la misma línea base que su título. */
+@media (min-width: 860px) { .tema-c .seccion .envoltura { align-items: baseline; } }
