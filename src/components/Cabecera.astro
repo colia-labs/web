@@ -1,0 +1,32 @@
+---
+import { textos, enIdioma, type Idioma } from "../i18n/textos";
+
+interface Props {
+  idioma: Idioma;
+  /** Ruta de esta misma página en el otro idioma. */
+  rutaOtroIdioma: string;
+  /** El enlace al blog solo aparece cuando hay al menos una entrada publicada. */
+  hayBlog: boolean;
+}
+
+const { idioma, rutaOtroIdioma, hayBlog } = Astro.props;
+const t = textos[idioma];
+const inicio = enIdioma(idioma, "/");
+---
+
+<header class="cabecera">
+  <div class="envoltura">
+    <a class="firma" href={inicio}><img src="/logo/logo-sobre-crudo.svg" alt="" width="32" height="32"><span>ColIA</span></a>
+    <nav class="menu" aria-label={idioma === "en" ? "Main" : "Principal"}>
+      <a href={`${inicio}#work`}>{t.menu.proyectos}</a>
+      <a href={`${inicio}#principles`}>{t.menu.principios}</a>
+      <a href={`${inicio}#join`}>{t.menu.unete}</a>
+      {hayBlog && <a href={enIdioma(idioma, "/blog/")}>{t.menu.blog}</a>}
+      <span class="idioma">
+        {idioma === "en" ? <b>EN</b> : <a href={rutaOtroIdioma} hreflang="en" data-idioma="en" aria-label="English">EN</a>}
+        ·
+        {idioma === "es" ? <b>ES</b> : <a href={rutaOtroIdioma} hreflang="es" data-idioma="es" aria-label="Español">ES</a>}
+      </span>
+    </nav>
+  </div>
+</header>

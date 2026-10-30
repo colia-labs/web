@@ -1,0 +1,86 @@
+---
+import { getImage } from "astro:assets";
+import { textos, enlaces, type Idioma } from "../i18n/textos";
+import portada from "../assets/portada.png";
+import biodiversidad from "../assets/biodiversidad.png";
+
+interface Props {
+  idioma: Idioma;
+}
+
+const { idioma } = Astro.props;
+const t = textos[idioma];
+// Las dos ilustraciones van de fondo con CSS; Astro las convierte a WebP y reduce su peso.
+const fondoPortada = await getImage({ src: portada, format: "webp", width: 2000, quality: 82 });
+const fondoBanda = await getImage({ src: biodiversidad, format: "webp", width: 1600, quality: 82 });
+---
+
+<section class="portada">
+  <div class="lienzo" role="img" aria-label={t.portada.alt} style={`background-image: url("${fondoPortada.src}")`}></div>
+  <div class="panel">
+    <h1>{t.portada.titulo}</h1>
+    <p>{t.portada.frase}</p>
+    <div class="acciones">
+      <a class="boton" href="#join">{t.portada.boton}</a>
+      <a href={enlaces.github}>{t.portada.github}</a>
+    </div>
+  </div>
+</section>
+<div class="tras-portada"></div>
+
+<section class="seccion" id="work">
+  <div class="envoltura">
+    <h2>{t.proyectos.titulo}</h2>
+    <div class="contenido">
+      <ul class="proyectos">
+        <li>
+          <div class="fila"><h3>ColIA-Local</h3><span class="estado">{t.proyectos.pronto}</span></div>
+          <p>{t.proyectos.local}</p>
+        </li>
+        <li>
+          <div class="fila"><h3 class="nombre">Sibundoy-Translate-1.7B</h3><span class="estado">{t.proyectos.pronto}</span></div>
+          <p>{t.proyectos.sibundoy}</p>
+          <p class="origen">{t.proyectos.origen}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="tejido"></div>
+
+<section class="seccion principios-tierra" id="principles">
+  <div class="envoltura">
+    <h2>{t.principios.titulo}</h2>
+    <div class="contenido">
+      <ol class="principios">
+        {t.principios.lista.map(([nombre, texto]) => <li><span><b>{nombre}</b> {texto}</span></li>)}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="seccion comunidad" id="join">
+  <div class="banda" role="img" aria-label={t.comunidad.alt} style={`background-image: url("${fondoBanda.src}")`}></div>
+  <div class="envoltura">
+    <h2>{t.comunidad.titulo}</h2>
+    <div class="contenido">
+      <p>{t.comunidad.texto}</p>
+      <ul class="enlaces">
+        <li><a href={enlaces.discussions}>{t.comunidad.discussions}</a></li>
+        <li><a href={enlaces.guia}>{t.comunidad.guia}</a></li>
+        <li><a href={enlaces.normas}>{t.comunidad.normas}</a> <span class="tenue">{t.comunidad.normasNota}</span></li>
+        <li><span class="tenue">{t.comunidad.discord}</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="contact">
+  <div class="envoltura">
+    <h2>{t.contacto.titulo}</h2>
+    <div class="contenido">
+      <p>{t.contacto.antes} <a class="mono" href={`mailto:${enlaces.correo}`}>{enlaces.correo}</a>. {t.contacto.despues}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import { textos, enIdioma, type Idioma } from "../i18n/textos";
+import { entradas, nombreEntrada, fechaLarga } from "../lib/blog";
+
+interface Props {
+  idioma: Idioma;
+}
+
+const { idioma } = Astro.props;
+const t = textos[idioma];
+const lista = await entradas(idioma);
+---
+
+<section class="cabeza-pagina">
+  <div class="envoltura">
+    <h1>{t.blog.titulo}</h1>
+    <p>{t.blog.frase}</p>
+  </div>
+</section>
+
+<section class="envoltura">
+  {lista.length === 0 ? (
+    <p class="vacio">{t.blog.vacio}</p>
+  ) : (
+    <ul class="entradas">
+      {lista.map((e, i) => {
+        const url = enIdioma(idioma, `/blog/${nombreEntrada(e)}/`);
+        return (
+          <li>
+            <time datetime={e.data.fecha.toISOString().slice(0, 10)}>{fechaLarga(e.data.fecha, idioma)}</time>
+            <div>
+              {i === 0 && e.data.portada && (
+                <a href={url}><Image class="miniatura" src={e.data.portada} alt={e.data.portadaAlt ?? ""} width={1280} format="webp" /></a>
+              )}
+              <h2><a href={url}>{e.data.titulo}</a></h2>
+              <p>{e.data.entradilla}</p>
+              <span class="etiqueta">{t.blog.etiquetas[e.data.etiqueta]}</span>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  )}
+</section>

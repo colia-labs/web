@@ -1,0 +1,37 @@
+---
+import { textos, enlaces, type Idioma } from "../i18n/textos";
+import { iconos } from "../lib/iconos";
+
+interface Props {
+  idioma: Idioma;
+  rutaOtroIdioma: string;
+}
+
+const { idioma, rutaOtroIdioma } = Astro.props;
+const t = textos[idioma];
+const redes = [
+  { nombre: "GitHub", url: enlaces.github },
+  { nombre: "Hugging Face", url: enlaces.huggingface },
+  { nombre: "X", url: enlaces.x },
+  { nombre: "LinkedIn", url: enlaces.linkedin },
+];
+---
+
+<div class="tejido oscuro"></div>
+<footer class="pie">
+  <div class="envoltura">
+    <span>{t.pie}</span>
+    <nav class="redes" aria-label={idioma === "en" ? "Social" : "Redes"}>
+      {redes.map((r) => (
+        <a href={r.url} aria-label={r.nombre} title={r.nombre}>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d={iconos[r.nombre]} /></svg>
+        </a>
+      ))}
+      <span class="idioma">
+        {idioma === "en" ? <b>EN</b> : <a href={rutaOtroIdioma} hreflang="en" data-idioma="en">EN</a>}
+        ·
+        {idioma === "es" ? <b>ES</b> : <a href={rutaOtroIdioma} hreflang="es" data-idioma="es">ES</a>}
+      </span>
+    </nav>
+  </div>
+</footer>

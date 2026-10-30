@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import { render } from "astro:content";
+import { textos, enlaces, enIdioma, type Idioma } from "../i18n/textos";
+import { fechaLarga, minutosLectura, type Entrada } from "../lib/blog";
+
+interface Props {
+  idioma: Idioma;
+  entrada: Entrada;
+}
+
+const { idioma, entrada } = Astro.props;
+const t = textos[idioma];
+const d = entrada.data;
+const { Content } = await render(entrada);
+
+// El título se parte alrededor del nombre del modelo para pintarlo sin cortes y con la bandera de su lugar debajo.
+const [antes, despues] = d.nombre && d.titulo.includes(d.nombre) ? d.titulo.split(d.nombre) : [d.titulo, ""];
+const franja = d.banderaLugar
+  ? `linear-gradient(to right, ${d.banderaLugar
+      .map((c, i, l) => `${c} ${((i * 100) / l.length).toFixed(3)}% ${(((i + 1) * 100) / l.length).toFixed(3)}%`)
+      .join(", ")})`
+  : undefined;
+---
+
+<section class="cabeza-entrada">
+  <div class="articulo">
+    <a class="volver" href={enIdioma(idioma, "/blog/")}>{t.blog.volver}</a>
+    <span class="etiqueta">{t.blog.etiquetas[d.etiqueta]}</span>
+    <h1>
+      {antes}
+      {d.nombre && d.titulo.includes(d.nombre) && (
+        <span class:list={["nombre", { "con-bandera": franja }]} style={franja ? `--bandera-lugar: ${franja}` : undefined}>{d.nombre}</span>
+      )}
+      {despues}
+    </h1>
+    <p class="entradilla">{d.entradilla}</p>
+    <div class="meta">
+      <span>{d.autor}</span>
+      <span><time datetime={d.fecha.toISOString().slice(0, 10)}>{fechaLarga(d.fecha, idioma)}</time></span>
+      <span>{minutosLectura(entrada.body)} {t.blog.lectura}</span>
+    </div>
+  </div>
+</section>
+
+{d.portada && (
+  <div class="portada-entrada">
+    <figure class="figura-portada">
+      <Image src={d.portada} alt={d.portadaAlt ?? ""} width={2000} format="webp" />
+      {d.portadaPie && <figcaption>{d.portadaPie}</figcaption>}
+    </figure>
+  </div>
+)}
+
+<article class="cuerpo">
+  <div class="articulo">
+    <Content />
+  </div>
+</article>
+
+<section class="cierre">
+  <div class="articulo">
+    <h2>{t.blog.cierreTitulo}</h2>
+    <p>{t.blog.cierreTexto}</p>
+    <p><a href={enlaces.discussions}>{t.blog.cierreEnlace}</a></p>
+  </div>
+</section>

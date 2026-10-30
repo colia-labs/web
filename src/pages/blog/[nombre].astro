@@ -1,0 +1,27 @@
+---
+import Base from "../../layouts/Base.astro";
+import BlogEntrada from "../../components/BlogEntrada.astro";
+import { entradas, nombreEntrada } from "../../lib/blog";
+import { enIdioma } from "../../i18n/textos";
+
+export async function getStaticPaths() {
+  const propias = await entradas("en");
+  const otras = new Set((await entradas("es")).map(nombreEntrada));
+  return propias.map((entrada) => ({ params: { nombre: nombreEntrada(entrada) }, props: { entrada, traducida: otras.has(nombreEntrada(entrada)) } }));
+}
+
+const { entrada, traducida } = Astro.props;
+const ruta = `/blog/${nombreEntrada(entrada)}/`;
+---
+
+<Base
+  idioma="en"
+  ruta={ruta}
+  titulo={entrada.data.titulo}
+  descripcion={entrada.data.entradilla}
+  bilingue={traducida}
+  rutaOtroIdioma={traducida ? undefined : enIdioma("es", "/blog/")}
+  tipo="article"
+>
+  <BlogEntrada idioma="en" entrada={entrada} />
+</Base>

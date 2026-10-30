@@ -1,0 +1,9 @@
+---
+import Base from "../../../layouts/Base.astro";
+import BlogIndice from "../../../components/BlogIndice.astro";
+import { textos } from "../../../i18n/textos";
+---
+
+<Base idioma="es" ruta="/blog/" titulo={textos.es.blog.titulo} descripcion={textos.es.blog.frase}>
+  <BlogIndice idioma="es" />
+</Base>

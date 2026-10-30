@@ -1,0 +1,205 @@
+/* colia.org. Los valores salen de DESIGN.md: si cambias uno aquí, cámbialo allí. */
+@import url("/fuentes/fuentes.css");
+
+:root {
+  --tinta: #121212;
+  --papel: #F4F4F4;
+  --gris-suave: #EFEFEF;
+  --linea: #E0E0E0;
+  --linea-marcada: #C9C9C9;
+  --secundario: #666666;
+  --crudo: #E8D9B3;
+  --verde-cafetal: #2F5D3A;
+  --ocre-claro: #E0B35E;
+  --negro-vueltiao: #1A1714;
+  --estado-ambar: #C27C0E;
+  --ancho: 1080px;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: 88px; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  /* El pie siempre llega al fondo, aunque la página sea corta. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main { flex: 1; }
+
+a { color: inherit; text-decoration: underline; text-decoration-color: var(--linea-marcada); text-underline-offset: 0.2em; }
+a:hover { text-decoration-color: currentColor; }
+
+.envoltura { max-width: var(--ancho); margin: 0 auto; padding: 0 24px; }
+.mono { font-family: "Atkinson Hyperlegible Mono", monospace; font-size: 0.92em; }
+.tenue { color: var(--secundario); }
+
+/* Cabecera: crudo y fija arriba. */
+.cabecera { position: sticky; top: 0; z-index: 5; background: var(--crudo); }
+.cabecera .envoltura { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
+/* Logo de 32 px: nombre a 0,6 lados (19 px) y separado 0,3 lados (10 px), como pide MARCA.md. */
+.firma { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.firma img { width: 32px; height: 32px; display: block; }
+.firma span { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+.menu { display: flex; align-items: center; gap: 28px; font-size: 16px; }
+.menu > a { text-decoration: none; }
+.idioma { display: flex; gap: 6px; font-size: 14px; }
+.idioma b { font-weight: 600; }
+.idioma a { text-decoration: none; }
+.idioma a:hover { text-decoration: underline; }
+
+/* Franja tejida: rombos escalonados como los del logo. */
+.tejido {
+  height: 30px;
+  background-color: var(--crudo);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='20' shape-rendering='crispEdges'%3E%3Cg fill='%231A1714'%3E%3Crect x='12' y='4' width='4' height='4'/%3E%3Crect x='8' y='8' width='4' height='4'/%3E%3Crect x='16' y='8' width='4' height='4'/%3E%3Crect x='12' y='12' width='4' height='4'/%3E%3Crect x='0' y='8' width='4' height='4'/%3E%3Crect x='24' y='8' width='4' height='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 42px 30px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+.tejido.oscuro {
+  background-color: var(--negro-vueltiao);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='20' shape-rendering='crispEdges'%3E%3Cg fill='%23E8D9B3'%3E%3Crect x='12' y='4' width='4' height='4'/%3E%3Crect x='8' y='8' width='4' height='4'/%3E%3Crect x='16' y='8' width='4' height='4'/%3E%3Crect x='12' y='12' width='4' height='4'/%3E%3Crect x='0' y='8' width='4' height='4'/%3E%3Crect x='24' y='8' width='4' height='4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Portada: ilustración a todo el ancho y el texto en un panel crudo liso, nunca sobre la imagen. */
+.portada { position: relative; }
+.portada .lienzo { height: min(72vh, 640px); min-height: 420px; background-color: var(--crudo); background-position: center 40%; background-size: cover; background-repeat: no-repeat; }
+.portada .panel {
+  position: absolute; left: max(24px, calc((100vw - var(--ancho)) / 2 + 24px)); bottom: -56px;
+  width: min(780px, calc(100vw - 48px)); padding: 36px 44px 32px;
+  background: var(--crudo); border-radius: 14px;
+}
+.portada h1 { font-size: clamp(36px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 16px; }
+.portada p { font-size: 21px; line-height: 1.5; margin: 0 0 28px; }
+.tras-portada { height: 56px; }
+.acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 17px; }
+.acciones a:not(.boton) { text-decoration-color: rgb(18 18 18 / 0.35); }
+.boton { display: inline-block; padding: 12px 20px; border-radius: 8px; background: var(--verde-cafetal); color: #FFFFFF; text-decoration: none; font-weight: 600; }
+
+/* Secciones: título a la izquierda y contenido a la derecha en pantallas anchas. */
+.seccion { border-top: 1px solid var(--linea); padding: 72px 0; }
+.seccion .envoltura { display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 860px) { .seccion .envoltura { grid-template-columns: 260px 1fr; gap: 48px; align-items: baseline; } }
+.seccion h2 { font-size: 28px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
+.seccion .contenido { max-width: 64ch; }
+.seccion .contenido > p:first-child { margin-top: 0; }
+
+/* Proyectos: filas con la línea de la bandera de Colombia debajo (2 : 1 : 1). */
+.proyectos { list-style: none; margin: 0; padding: 0; }
+.proyectos li { position: relative; padding: 28px 0; }
+.proyectos li:first-child { padding-top: 0; }
+.proyectos li::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(to right, #FCD116 0 50%, #003893 50% 75%, #CE1126 75% 100%); }
+.proyectos .fila { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.proyectos h3 { font-size: 22px; font-weight: 600; margin: 0; }
+.proyectos p { margin: 8px 0 0; color: var(--secundario); }
+.proyectos .origen { margin-top: 12px; font-size: 16px; }
+.estado { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--secundario); white-space: nowrap; }
+.estado::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--estado-ambar); }
+
+/* Principios sobre verde cafetal. */
+.principios-tierra { background: var(--verde-cafetal); color: var(--crudo); border-top: 0; }
+.principios { list-style: none; margin: 0; padding: 0; counter-reset: p; }
+.principios li { counter-increment: p; display: grid; grid-template-columns: 64px 1fr; padding: 16px 0; }
+.principios li::before { content: counter(p, decimal-leading-zero); font-family: "Atkinson Hyperlegible Mono", monospace; font-size: 28px; line-height: 1; color: var(--ocre-claro); }
+.principios b { font-weight: 600; color: #FFFFFF; }
+
+/* Comunidad sobre crudo, con la banda de biodiversidad encima. */
+.comunidad { background: var(--crudo); border-top: 0; padding-top: 0; }
+.banda { height: 260px; background-color: var(--crudo); background-position: center; background-size: contain; background-repeat: repeat-x; margin-bottom: 56px; }
+.enlaces { list-style: none; margin: 24px 0 0; padding: 0; }
+.enlaces li { padding: 6px 0; }
+.comunidad a { color: var(--verde-cafetal); text-decoration-color: rgb(47 93 58 / 0.4); font-weight: 600; }
+.comunidad .tenue { color: var(--tinta); }
+
+/* Pie en negro vueltiao. */
+.pie { background: var(--negro-vueltiao); color: var(--crudo); padding: 40px 0 56px; font-size: 15px; }
+.pie .envoltura { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.pie a { text-decoration-color: rgb(232 217 179 / 0.4); }
+.redes { display: flex; align-items: center; gap: 18px; }
+.redes > a { display: inline-flex; opacity: 0.85; text-decoration: none; }
+.redes > a:hover { opacity: 1; }
+.redes .idioma { margin-left: 8px; font-size: 15px; }
+
+/* Cabecera de página interior, sobre crudo. */
+.cabeza-pagina { background: var(--crudo); padding: 64px 0 56px; }
+.cabeza-pagina h1 { font-size: clamp(36px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 16px; }
+.cabeza-pagina p { font-size: 21px; line-height: 1.5; margin: 0; max-width: 46ch; }
+
+/* Blog: índice. */
+.entradas { list-style: none; margin: 0; padding: 0; }
+.entradas li { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 32px 0; border-bottom: 1px solid var(--linea); }
+@media (min-width: 860px) { .entradas li { grid-template-columns: 160px 1fr; gap: 48px; align-items: baseline; } }
+.entradas time { font-family: "Atkinson Hyperlegible Mono", monospace; font-size: 15px; color: var(--secundario); }
+.entradas h2 { font-size: 26px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; }
+.entradas h2 a { text-decoration: none; }
+.entradas h2 a:hover { text-decoration: underline; text-decoration-color: var(--linea-marcada); }
+.entradas p { margin: 0; color: var(--secundario); max-width: 64ch; }
+.entradas .miniatura { width: 100%; max-width: 640px; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; display: block; margin-bottom: 20px; }
+.etiqueta { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--verde-cafetal); }
+.vacio { padding: 72px 0; color: var(--secundario); }
+
+/* Blog: entrada en una columna centrada. */
+.articulo { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.cabeza-entrada { background: var(--crudo); padding: 56px 0 48px; }
+.volver { display: inline-block; margin-bottom: 24px; font-size: 16px; text-decoration-color: rgb(18 18 18 / 0.35); }
+.cabeza-entrada .etiqueta { display: block; margin: 0 0 16px; }
+.cabeza-entrada h1 { font-size: clamp(34px, 4.4vw, 50px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 20px; }
+.cabeza-entrada .entradilla { font-size: 21px; line-height: 1.5; margin: 0 0 24px; }
+.meta { font-size: 15px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.meta span + span::before { content: "·"; margin-right: 16px; }
+/* Los nombres de modelo no se parten por el guion, salvo en móvil, donde no caben. */
+.nombre { white-space: nowrap; }
+.nombre.con-bandera { position: relative; display: inline-block; padding-bottom: 14px; }
+.nombre.con-bandera::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--bandera-lugar); }
+
+.portada-entrada { position: relative; }
+.portada-entrada::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 50%; background: var(--crudo); }
+.figura-portada { position: relative; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.figura-portada img { width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 14px; display: block; }
+figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
+
+.cuerpo { padding: 56px 0 72px; }
+.cuerpo h2 { font-size: 28px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 16px; }
+.cuerpo h2:first-child { margin-top: 0; }
+.cuerpo p, .cuerpo li { max-width: 64ch; }
+.cuerpo table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 17px; }
+.cuerpo th, .cuerpo td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.cuerpo th { font-weight: 600; font-size: 15px; color: var(--secundario); }
+/* Las tablas de dos columnas sin títulos (dato y valor) no muestran la fila de cabecera vacía. */
+.cuerpo thead:not(:has(th:not(:empty))) { display: none; }
+.cuerpo pre { background: var(--gris-suave) !important; color: var(--tinta) !important; border-radius: 10px; padding: 16px 20px; overflow-x: auto; margin: 24px 0; }
+.cuerpo code { font-family: "Atkinson Hyperlegible Mono", monospace; font-size: 15px; line-height: 1.65; }
+.cuerpo p code, .cuerpo td code { background: var(--gris-suave); border-radius: 4px; padding: 1px 6px; }
+
+.cierre { background: var(--crudo); padding: 48px 0; }
+.cierre h2 { font-size: 24px; font-weight: 600; margin: 0 0 12px; }
+.cierre p { margin: 0 0 16px; }
+.cierre a { color: var(--verde-cafetal); font-weight: 600; text-decoration-color: rgb(47 93 58 / 0.4); }
+
+/* Página 404. */
+.no-existe { padding: 96px 0 112px; }
+.no-existe h1 { font-size: clamp(36px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 16px; }
+.no-existe p { font-size: 21px; margin: 0 0 32px; color: var(--secundario); }
+
+/* Móvil. */
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  .menu > a { display: none; }
+  .portada .lienzo { height: 300px; min-height: 0; }
+  .portada .panel { position: static; width: auto; border-radius: 0; padding: 32px 24px; }
+  .tras-portada { display: none; }
+  .portada p { font-size: 19px; }
+  .seccion { padding: 56px 0; }
+  .banda { height: 160px; }
+  .nombre { white-space: normal; }
+  .cabeza-entrada h1 { font-size: 30px; }
+}

@@ -1,0 +1,80 @@
+---
+import "../styles/global.css";
+import Cabecera from "../components/Cabecera.astro";
+import Pie from "../components/Pie.astro";
+import { textos, enIdioma, type Idioma } from "../i18n/textos";
+import { entradas } from "../lib/blog";
+
+interface Props {
+  idioma: Idioma;
+  /** Título de la página. Sin él, solo «ColIA». */
+  titulo?: string;
+  descripcion?: string;
+  /** Ruta sin prefijo de idioma, para enlazar las dos versiones. Por ejemplo «/» o «/blog/». */
+  ruta: string;
+  /** Si la página no existe en el otro idioma, adónde lleva el selector. Por defecto, la misma ruta. */
+  rutaOtroIdioma?: string;
+  /** Si la página existe en los dos idiomas, para las etiquetas hreflang. */
+  bilingue?: boolean;
+  tipo?: "website" | "article";
+}
+
+const { idioma, titulo, descripcion, ruta, rutaOtroIdioma, bilingue = true, tipo = "website" } = Astro.props;
+const t = textos[idioma];
+const otro: Idioma = idioma === "en" ? "es" : "en";
+const tituloCompleto = titulo ? `${titulo} · ColIA` : "ColIA";
+const desc = descripcion ?? t.descripcion;
+const sitio = Astro.site ?? new URL("https://colia.org");
+const canonica = new URL(enIdioma(idioma, ruta), sitio);
+const otraRuta = rutaOtroIdioma ?? enIdioma(otro, ruta);
+const hayBlog = (await entradas(idioma)).length > 0;
+const imagen = new URL("/og.png", sitio);
+---
+
+<!doctype html>
+<html lang={idioma}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{tituloCompleto}</title>
+  <meta name="description" content={desc}>
+  <link rel="canonical" href={canonica}>
+  {bilingue && (
+    <>
+      <link rel="alternate" hreflang="en" href={new URL(enIdioma("en", ruta), sitio)}>
+      <link rel="alternate" hreflang="es" href={new URL(enIdioma("es", ruta), sitio)}>
+      <link rel="alternate" hreflang="x-default" href={new URL(enIdioma("en", ruta), sitio)}>
+    </>
+  )}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/fuentes/AtkinsonHyperlegibleNext-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuentes/AtkinsonHyperlegibleNext-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:type" content={tipo}>
+  <meta property="og:site_name" content="ColIA">
+  <meta property="og:title" content={titulo ?? "ColIA"}>
+  <meta property="og:description" content={desc}>
+  <meta property="og:url" content={canonica}>
+  <meta property="og:image" content={imagen}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content={idioma === "en" ? "en_US" : "es_CO"}>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@colialabs">
+</head>
+<body>
+  <Cabecera idioma={idioma} rutaOtroIdioma={otraRuta} hayBlog={hayBlog} />
+  <main>
+    <slot />
+  </main>
+  <Pie idioma={idioma} rutaOtroIdioma={otraRuta} />
+  <script is:inline>
+    // Quien elige idioma a mano lo guarda un año. La función de Cloudflare lo respeta por encima del navegador.
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[data-idioma]");
+      if (a) document.cookie = `idioma=${a.dataset.idioma}; path=/; max-age=31536000; SameSite=Lax`;
+    });
+  </script>
+</body>
+</html>
