@@ -110,17 +110,8 @@
   </div>
 </footer>
 
-<script>
-  // Solo para la maqueta: ?portada=monserrate o ?portada=cartagena cambia la ilustración de la portada.
-  const variante = new URLSearchParams(location.search).get("portada");
-  if (variante) document.querySelector(".lienzo").style.backgroundImage = `url("imagenes/portada-${variante}.png")`;
-</script>
-
 <div class="barra-maqueta">
   <span>Maqueta C</span>
-  <a href="c-tierra.html">Actual</a>
-  <a href="c-tierra.html?portada=monserrate">Monserrate</a>
-  <a href="c-tierra.html?portada=cartagena">Cartagena</a>
   <a href="index.html">Volver</a>
 </div>
 
