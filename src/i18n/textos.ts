@@ -35,7 +35,7 @@ export const textos = {
       titulo: "What we make",
       pronto: "Coming soon",
       local: "An app built on llama.cpp that runs AI models on your computer with recipes: models with settings measured on real hardware. One click measures your computer and shares the results, so anyone can help improve the recipes.",
-      sibundoy: "A model that translates English into Spanish on your own computer, so your texts never leave it. It learned from about 70,000 pairs of sentences from open sources.",
+      sibundoy: "A model that translates English into Spanish on your own computer, so your texts never leave it. Trained on sentence pairs from open sources.",
       origen: "Named in honor of the Sibundoy Valley, in Putumayo, Colombia.",
     },
     principios: {
@@ -93,7 +93,7 @@ export const textos = {
       titulo: "Lo que hacemos",
       pronto: "Próximamente",
       local: "Una app sobre llama.cpp que pone modelos de IA en tu equipo con recetas: modelos con ajustes medidos en equipos reales. Con un clic mides tu equipo y compartes los resultados, para que cualquiera ayude a mejorar las recetas.",
-      sibundoy: "Un modelo que traduce de inglés a español en tu propio equipo, así que tus textos nunca salen de él. Aprendió de unos 70.000 pares de frases de fuentes abiertas.",
+      sibundoy: "Un modelo que traduce de inglés a español en tu propio equipo, así que tus textos nunca salen de él. Entrenado con pares de frases de fuentes abiertas.",
       origen: "Lleva el nombre en honor al valle de Sibundoy, en el Putumayo.",
     },
     principios: {
