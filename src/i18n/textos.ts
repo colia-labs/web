@@ -51,7 +51,7 @@ export const textos = {
     },
     comunidad: {
       titulo: "Join us",
-      texto: "You don't need to be an expert. ColIA started as one person learning in the open. If you want to learn, find people to build with, or make small things that help, there's room for you.",
+      texto: "You don't need to be an expert. ColIA is starting with one person learning in the open. If you want to learn, find people to build with, or make small things that help, there's room for you.",
       discussions: "Talk to us in GitHub Discussions",
       guia: "Read the contributing guide",
       normas: "Read the code of conduct",
@@ -109,7 +109,7 @@ export const textos = {
     },
     comunidad: {
       titulo: "Únete",
-      texto: "No hace falta saberlo todo. ColIA empezó como una persona aprendiendo en público. Si quieres aprender, encontrar con quién construir o hacer cosas pequeñas que aporten, aquí hay sitio para ti.",
+      texto: "No hace falta saberlo todo. ColIA empieza con una persona aprendiendo en público. Si quieres aprender, encontrar con quién construir o hacer cosas pequeñas que aporten, aquí hay sitio para ti.",
       discussions: "Habla con nosotros en GitHub Discussions",
       guia: "Lee la guía para aportar",
       normas: "Lee las normas de convivencia",
