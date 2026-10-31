@@ -34,18 +34,19 @@ export const textos = {
     proyectos: {
       titulo: "What we make",
       pronto: "Coming soon",
-      local: "An app that runs AI models on your computer. No account, no cloud, no terminal.",
-      sibundoy: "A small model that translates English into Spanish.",
-      origen: "It's named after Sibundoy, a town in the Sibundoy Valley, Putumayo, where ColIA's founder was born. Our models take the names of places in Colombia.",
+      local: "An app built on llama.cpp that runs AI models on your computer with recipes: models with settings measured on real hardware. One click measures your computer and shares the results, so anyone can help improve the recipes.",
+      sibundoy: "A model that translates English into Spanish on your own computer, so your texts never leave it. Trained on sentence pairs from open sources.",
+      origen: "Named in honor of the Sibundoy Valley, in Putumayo, Colombia.",
     },
     principios: {
       titulo: "How we work",
       lista: [
         ["Open.", "Code, models and recipes are published under open licenses."],
-        ["Measured.", "Every claim comes with numbers, measured on modest hardware."],
+        ["Measured.", "Every claim comes with numbers, measured on real hardware, from a modest laptop to a powerful workstation."],
         ["Bilingual.", "Everything ships in English and Spanish. The Spanish is native, not a translation."],
         ["Local.", "What we make runs on your computer, without depending on a cloud."],
         ["Community.", "Anyone who wants to learn, explore or contribute is welcome, whatever they know."],
+        ["Places.", "Our models are named after places in Colombia that deserve to be better known: beautiful, diverse and full of talent."],
       ],
     },
     comunidad: {
@@ -91,18 +92,19 @@ export const textos = {
     proyectos: {
       titulo: "Lo que hacemos",
       pronto: "Próximamente",
-      local: "Una app que pone modelos de IA en tu equipo. Sin cuenta, sin nube y sin terminal.",
-      sibundoy: "Un modelo pequeño que traduce de inglés a español.",
-      origen: "Lleva el nombre de Sibundoy, un pueblo del valle de Sibundoy, en el Putumayo, donde nació quien fundó ColIA. Nuestros modelos llevan nombres de lugares de Colombia.",
+      local: "Una app sobre llama.cpp que pone modelos de IA en tu equipo con recetas: modelos con ajustes medidos en equipos reales. Con un clic mides tu equipo y compartes los resultados, para que cualquiera ayude a mejorar las recetas.",
+      sibundoy: "Un modelo que traduce de inglés a español en tu propio equipo, así que tus textos nunca salen de él. Entrenado con pares de frases de fuentes abiertas.",
+      origen: "Lleva el nombre en honor al valle de Sibundoy, en el Putumayo.",
     },
     principios: {
       titulo: "Cómo trabajamos",
       lista: [
         ["Abierto.", "El código, los modelos y las recetas se publican con licencia abierta."],
-        ["Medido.", "Cada afirmación lleva cifras, medidas en hardware modesto."],
+        ["Medido.", "Cada afirmación lleva cifras, medidas en equipos reales, desde un portátil modesto hasta una estación de trabajo potente."],
         ["Bilingüe.", "Todo sale en inglés y en español. El español es nativo, no una traducción."],
         ["Local.", "Lo que hacemos funciona en tu equipo, sin depender de una nube."],
         ["Comunidad.", "Quien quiera aprender, explorar o aportar es bienvenido, sepa mucho o poco."],
+        ["Lugares.", "Nuestros modelos llevan el nombre de lugares de Colombia que merecen ser más conocidos: hermosos, diversos y llenos de talento."],
       ],
     },
     comunidad: {

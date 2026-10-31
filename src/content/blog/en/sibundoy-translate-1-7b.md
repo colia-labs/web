@@ -51,9 +51,9 @@ TODO: known limitations. Types of text, length, dialects. Honest and specific.
 
 ## Why Sibundoy
 
-Sibundoy is a town in the Sibundoy Valley, in Putumayo, in the south of Colombia. It's where ColIA's founder was born, and the first place they called home.
+The Sibundoy Valley is in Putumayo, in the south of Colombia, high in the Andes. It's one of those places that deserve to be better known.
 
-Our models take the names of places in Colombia. Models that share a place form a family, so this is the first of the Sibundoy family.
+Our models are named in honor of places like it: beautiful, diverse and full of talent, but not always on the map. Models that share a place form a family, so this is the first of the Sibundoy family.
 
 ## What's next
 

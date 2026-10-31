@@ -51,9 +51,9 @@ TODO: limitaciones conocidas. Tipos de texto, longitud, variantes del idioma. Co
 
 ## Por qué Sibundoy
 
-Sibundoy es un pueblo del valle de Sibundoy, en el Putumayo, al sur de Colombia. Es donde nació quien fundó ColIA: su primer hogar.
+El valle de Sibundoy está en el Putumayo, al sur de Colombia, en lo alto de los Andes. Es uno de esos lugares que merecen ser más conocidos.
 
-Nuestros modelos llevan nombres de lugares de Colombia. Los que comparten lugar forman una familia, así que este es el primero de la familia Sibundoy.
+Nuestros modelos llevan el nombre en honor a lugares así: hermosos, diversos y llenos de talento, aunque no siempre salgan en el mapa. Los que comparten lugar forman una familia, así que este es el primero de la familia Sibundoy.
 
 ## Qué sigue
 
