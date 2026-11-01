@@ -172,7 +172,7 @@ a:hover { text-decoration-color: currentColor; }
 .portada-entrada { position: relative; }
 .portada-entrada::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 50%; background: var(--crudo); }
 .figura-portada { position: relative; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-.figura-portada img { width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 14px; display: block; }
+.figura-portada img { width: 100%; height: auto; border-radius: 14px; display: block; }
 figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
 
 .cuerpo { padding: 56px 0 72px; }
