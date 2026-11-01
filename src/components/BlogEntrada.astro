@@ -35,11 +35,11 @@ const franja = d.banderaLugar
       {despues}
     </h1>
     <p class="entradilla">{d.entradilla}</p>
-    <div class="meta">
+    <div class="meta"><div class="datos">
       <span>{d.autor}</span>
       <span><time datetime={d.fecha.toISOString().slice(0, 10)}><span class="fecha-larga">{fechaLarga(d.fecha, idioma)}</span><span class="fecha-corta">{fechaCorta(d.fecha)}</span></time></span>
       <span>{minutosLectura(entrada.body)} {t.blog.lectura}</span>
-    </div>
+    </div></div>
   </div>
 </section>
 
