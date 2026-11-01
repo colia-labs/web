@@ -24,18 +24,20 @@ const lista = await entradas(idioma);
     <p class="vacio">{t.blog.vacio}</p>
   ) : (
     <ul class="entradas">
-      {lista.map((e, i) => {
+      {lista.map((e) => {
         const url = enIdioma(idioma, `/blog/${nombreEntrada(e)}/`);
         return (
           <li>
-            <time datetime={e.data.fecha.toISOString().slice(0, 10)}>{fechaLarga(e.data.fecha, idioma)}</time>
+            <a href={url} class="miniatura" tabindex="-1" aria-hidden="true">
+              {e.data.portada && <Image src={e.data.portada} alt="" width={640} format="webp" />}
+            </a>
             <div>
-              {i === 0 && e.data.portada && (
-                <a href={url}><Image class="miniatura" src={e.data.portada} alt={e.data.portadaAlt ?? ""} width={1280} format="webp" /></a>
-              )}
               <h2><a href={url}>{e.data.titulo}</a></h2>
               <p>{e.data.entradilla}</p>
-              <span class="etiqueta">{t.blog.etiquetas[e.data.etiqueta]}</span>
+              <p class="meta">
+                <span class="etiqueta">{t.blog.etiquetas[e.data.etiqueta]}</span>
+                <time datetime={e.data.fecha.toISOString().slice(0, 10)}>{fechaLarga(e.data.fecha, idioma)}</time>
+              </p>
             </div>
           </li>
         );

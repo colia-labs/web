@@ -139,13 +139,17 @@ a:hover { text-decoration-color: currentColor; }
 /* Blog: índice. */
 .entradas { list-style: none; margin: 0; padding: 0; }
 .entradas li { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 32px 0; border-bottom: 1px solid var(--linea); }
-@media (min-width: 860px) { .entradas li { grid-template-columns: 160px 1fr; gap: 48px; align-items: baseline; } }
+@media (min-width: 860px) { .entradas li { grid-template-columns: 240px 1fr; gap: 40px; align-items: start; } }
 .entradas time { font-family: "Atkinson Hyperlegible Mono", monospace; font-size: 15px; color: var(--secundario); }
+.entradas .meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-top: 12px; }
+.entradas .meta .etiqueta { margin-top: 0; }
 .entradas h2 { font-size: 26px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; }
 .entradas h2 a { text-decoration: none; }
 .entradas h2 a:hover { text-decoration: underline; text-decoration-color: var(--linea-marcada); }
 .entradas p { margin: 0; color: var(--secundario); max-width: 64ch; }
-.entradas .miniatura { width: 100%; max-width: 640px; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; display: block; margin-bottom: 20px; }
+/* Sin portada, la miniatura queda como un hueco crudo del mismo tamaño. */
+.entradas .miniatura { display: block; width: 100%; max-width: 480px; aspect-ratio: 3 / 2; border-radius: 10px; overflow: hidden; background: var(--crudo); }
+.entradas .miniatura img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .etiqueta { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--verde-cafetal); }
 .vacio { padding: 72px 0; color: var(--secundario); }
 
