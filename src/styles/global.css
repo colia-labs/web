@@ -145,6 +145,8 @@ a:hover { text-decoration-color: currentColor; }
 .entradas .meta .etiqueta { margin-top: 0; }
 .entradas h2 { font-size: 26px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; }
 .entradas h2 a { text-decoration: none; }
+/* En el índice el título es más pequeño y el nombre cabe entero también en móvil. */
+.entradas .nombre { white-space: nowrap; }
 .entradas h2 a:hover { text-decoration: underline; text-decoration-color: var(--linea-marcada); }
 .entradas p { margin: 0; color: var(--secundario); max-width: 64ch; }
 /* Sin portada, la miniatura queda como un hueco crudo del mismo tamaño. */

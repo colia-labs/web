@@ -26,13 +26,15 @@ const lista = await entradas(idioma);
     <ul class="entradas">
       {lista.map((e) => {
         const url = enIdioma(idioma, `/blog/${nombreEntrada(e)}/`);
+        const { titulo, nombre } = e.data;
+        const [antes, despues] = nombre && titulo.includes(nombre) ? titulo.split(nombre) : [titulo, ""];
         return (
           <li>
             <a href={url} class="miniatura" tabindex="-1" aria-hidden="true">
               {e.data.portada && <Image src={e.data.portada} alt="" width={640} format="webp" />}
             </a>
             <div>
-              <h2><a href={url}>{e.data.titulo}</a></h2>
+              <h2><a href={url}>{antes}{nombre && titulo.includes(nombre) && <span class="nombre">{nombre}</span>}{despues}</a></h2>
               <p>{e.data.entradilla}</p>
               <p class="meta">
                 <span class="etiqueta">{t.blog.etiquetas[e.data.etiqueta]}</span>

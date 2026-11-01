@@ -192,6 +192,7 @@ rounded:
 - **Archivos actuales**, generados con Canva:
   - `portada.png`: el Eje Cafetero, con cafetales, palmas de cera y un nevado.
   - `biodiversidad.png`: frailejones, orquídea, colibrí, cóndor, café, heliconias y helechos, sobre crudo.
+  - `ColIA.png`: paisajes de Colombia con el logo y el nombre en el centro. Portada del post de presentación de ColIA.
   - `sibundoy1.png`: el valle de Sibundoy. Reservada para la entrada del blog que presente Sibundoy-Translate-1.7B; no va en la página principal.
 
 Son ilustraciones generadas con IA. Para la web final se pueden sustituir por fotos reales con licencia libre, fotos propias o ilustraciones encargadas.
