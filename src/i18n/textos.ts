@@ -72,6 +72,8 @@ export const textos = {
       cierreTitulo: "Tried it on your computer?",
       cierreTexto: "Share your results, your translations or your questions. Your numbers help other people choose.",
       cierreEnlace: "Talk to us in GitHub Discussions",
+      sumarseTitulo: "Want to join?",
+      sumarseTexto: "Ask a question, share an idea or tell us what you're building. You don't need to be an expert.",
       etiquetas: { modelo: "Model", app: "App", laboratorio: "Lab" },
     },
     noExiste: {
@@ -132,6 +134,8 @@ export const textos = {
       cierreTitulo: "¿Lo probaste en tu equipo?",
       cierreTexto: "Comparte tus resultados, tus traducciones o tus preguntas. Tus cifras ayudan a otras personas a elegir.",
       cierreEnlace: "Habla con nosotros en GitHub Discussions",
+      sumarseTitulo: "¿Quieres sumarte?",
+      sumarseTexto: "Pregunta, propón una idea o cuéntanos qué estás construyendo. No hace falta ser experto.",
       etiquetas: { modelo: "Modelo", app: "App", laboratorio: "Laboratorio" },
     },
     noExiste: {

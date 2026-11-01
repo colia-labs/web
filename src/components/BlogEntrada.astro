@@ -16,6 +16,8 @@ const { Content } = await render(entrada);
 
 // El título se parte alrededor del nombre del modelo para pintarlo sin cortes; la bandera de su lugar subraya el título entero.
 const [antes, despues] = d.nombre && d.titulo.includes(d.nombre) ? d.titulo.split(d.nombre) : [d.titulo, ""];
+// Los posts de modelos y apps invitan a probarlos; los del laboratorio, a sumarse.
+const deLaboratorio = d.etiqueta === "laboratorio";
 const franja = d.banderaLugar
   ? `linear-gradient(to right, ${d.banderaLugar
       .map((c, i, l) => `${c} ${((i * 100) / l.length).toFixed(3)}% ${(((i + 1) * 100) / l.length).toFixed(3)}%`)
@@ -58,8 +60,8 @@ const franja = d.banderaLugar
 
 <section class="cierre">
   <div class="articulo">
-    <h2>{t.blog.cierreTitulo}</h2>
-    <p>{t.blog.cierreTexto}</p>
+    <h2>{deLaboratorio ? t.blog.sumarseTitulo : t.blog.cierreTitulo}</h2>
+    <p>{deLaboratorio ? t.blog.sumarseTexto : t.blog.cierreTexto}</p>
     <p><a href={enlaces.discussions}>{t.blog.cierreEnlace}</a></p>
   </div>
 </section>
