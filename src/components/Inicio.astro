@@ -34,15 +34,15 @@ const fondoBanda = await getImage({ src: biodiversidad, format: "webp", width: 1
     <div class="contenido">
       <ul class="proyectos">
         <li>
-          <div class="fila"><h3>ColIA-Local</h3><span class="estado">{t.proyectos.desarrollo}</span></div>
-          <p>{t.proyectos.local}</p>
+          <div class="fila"><h3>{t.proyectos.modelo}</h3><span class="estado">{t.proyectos.pronto}</span></div>
+          <p>{t.proyectos.modeloTexto}</p>
         </li>
         <li>
-          <div class="fila"><h3 class="nombre">Sibundoy-Translate-1.7B</h3><span class="estado">{t.proyectos.pronto}</span></div>
-          <p>{t.proyectos.sibundoy}</p>
-          <p class="origen">{t.proyectos.origen}</p>
+          <div class="fila"><h3>{t.proyectos.app}</h3><span class="estado">{t.proyectos.desarrollo}</span></div>
+          <p>{t.proyectos.appTexto}</p>
         </li>
       </ul>
+      <p class="pronto">{t.proyectos.aviso} <a href={enlaces.discord}>{t.proyectos.avisoEnlace}</a>.</p>
     </div>
   </div>
 </section>

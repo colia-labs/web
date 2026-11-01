@@ -103,7 +103,7 @@ a:hover { text-decoration-color: currentColor; }
 .proyectos .fila { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .proyectos h3 { font-size: 22px; font-weight: 600; margin: 0; }
 .proyectos p { margin: 8px 0 0; color: var(--secundario); }
-.proyectos .origen { margin-top: 12px; font-size: 16px; }
+.proyectos + .pronto { margin-top: 28px; }
 .estado { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--secundario); white-space: nowrap; }
 .estado::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--estado-ambar); }
 
