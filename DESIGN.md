@@ -47,7 +47,7 @@ Tres familias de color, cada una con su papel.
 
 **Estado**
 
-- **Ámbar (#C27C0E):** el punto de 6 px de «Coming soon». Es el único color de estado de la web.
+- **Ámbar (#C27C0E):** el punto de 6 px del estado de cada proyecto («In development», «Coming soon»). Es el único color de estado de la web.
 
 ### Combinaciones de texto
 
@@ -217,7 +217,7 @@ Son ilustraciones generadas con IA. Para la web final se pueden sustituir por fo
 
 **Línea de la bandera del lugar.** En la entrada del blog que presenta un modelo, bajo su nombre en el título, va una línea de 6 px con los colores de la bandera del lugar que le da nombre. Sibundoy: verde `#1E7B34`, amarillo `#F2D21B` y blanco `#FFFFFF`, en franjas iguales, según Rubén. Los tonos del verde y el amarillo están ajustados a la paleta de la web.
 
-**Estado «Coming soon».** Punto ámbar de 6 px y texto secundario de 14 px.
+**Estado del proyecto** («In development», «Coming soon»). Punto ámbar de 6 px y texto secundario de 14 px.
 
 **Lista de principios.** Número de dos cifras en Atkinson Hyperlegible Mono, a 28 px y en ocre claro; nombre del principio en negrita blanca; explicación en crudo.
 

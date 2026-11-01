@@ -34,6 +34,7 @@ export const textos = {
     },
     proyectos: {
       titulo: "What we make",
+      desarrollo: "In development",
       pronto: "Coming soon",
       local: "An app built on llama.cpp that runs AI models on your computer with recipes: models with settings measured on real hardware. One click measures your computer and shares the results, so anyone can help improve the recipes.",
       sibundoy: "A model that translates English into Spanish on your own computer, so your texts never leave it. Trained on text pairs from open sources.",
@@ -96,6 +97,7 @@ export const textos = {
     },
     proyectos: {
       titulo: "Lo que hacemos",
+      desarrollo: "En desarrollo",
       pronto: "Próximamente",
       local: "Una app sobre llama.cpp que pone modelos de IA en tu equipo con recetas: modelos con ajustes medidos en equipos reales. Con un clic mides tu equipo y compartes los resultados, para que cualquiera ayude a mejorar las recetas.",
       sibundoy: "Un modelo que traduce de inglés a español en tu propio equipo, así que tus textos nunca salen de él. Entrenado con pares de textos de fuentes abiertas.",
