@@ -87,6 +87,8 @@ Desde aquí, los detalles:
 | Parámetros | 1.700 millones |
 | Tamaño del fichero | 1,1 GB (GGUF Q4_K_M) |
 | Licencia | LFM Open License v1.0, heredada de LFM3 (ver [Licencias](#licencias)) |
+| Modelo | [Hugging Face](https://huggingface.co/colia-labs/Sibundoy-Translate-1.7B) (también en [GGUF](https://huggingface.co/colia-labs/Sibundoy-Translate-1.7B-GGUF)) |
+| Código | [GitHub](https://github.com/colia-labs/sibundoy-translate) |
 
 ## Cómo lo hicimos
 
@@ -160,7 +162,7 @@ Comprobamos que los exámenes no estuvieran en nuestros datos: prácticamente ni
 
 ### Donde sí ganamos
 
-**Conserva el formato.** Nuestro examen tiene 213 textos, y 47 traen HTML o Markdown. Sibundoy conservó el formato en 210 de los 213; los demás modelos pequeños, entre 179 y 195. Si traduces páginas web o documentación, esto importa tanto como la calidad y es justo nuestro punto fuerte.
+**Conserva el formato.** Nuestro examen tiene 213 textos, y 47 traen HTML o Markdown. Sibundoy conservó el formato en 210 de los 213; los demás modelos pequeños, entre 189 y 208. Si traduces páginas web o documentación, esto importa tanto como la calidad y es justo nuestro punto fuerte.
 
 **Escribe un español neutro.** En WMT24++ usó formas de España en el 0,4 % de las frases; los demás modelos pequeños, entre el 1,4 % y el 1,9 %. Tampoco usó regionalismos de un solo país, como el voseo o «ahorita». Nuestro detector solo busca palabras concretas, así que un estilo regional más sutil no lo vería.
 
@@ -204,7 +206,7 @@ llama-server -m Sibundoy-Translate-1.7B-Q4_K_M.gguf \
 
 ## Pruébalo
 
-El modelo está en Hugging Face, en `colia-labs/Sibundoy-Translate-1.7B`.
+El modelo está en Hugging Face, en [colia-labs/Sibundoy-Translate-1.7B](https://huggingface.co/colia-labs/Sibundoy-Translate-1.7B), y en GGUF para llama.cpp en [colia-labs/Sibundoy-Translate-1.7B-GGUF](https://huggingface.co/colia-labs/Sibundoy-Translate-1.7B-GGUF). El código con el que lo hicimos está en GitHub, en [colia-labs/sibundoy-translate](https://github.com/colia-labs/sibundoy-translate).
 
 Arráncalo con la receta de arriba que corresponda a tu equipo. Después, manda cada párrafo como mensaje de usuario a `/v1/chat/completions`, con su instrucción exacta, una línea en blanco y el texto:
 
