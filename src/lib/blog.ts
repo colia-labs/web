@@ -12,6 +12,12 @@ export async function entradas(idioma: Idioma): Promise<Entrada[]> {
   return lista.sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
 }
 
+/** dd/mm/aaaa, para el móvil, donde la fecha larga no cabe junto a la etiqueta. */
+export function fechaCorta(fecha: Date): string {
+  const [a, m, d] = fecha.toISOString().slice(0, 10).split("-");
+  return `${d}/${m}/${a}`;
+}
+
 export function fechaLarga(fecha: Date, idioma: Idioma): string {
   return fecha.toLocaleDateString(idioma === "en" ? "en-US" : "es-CO", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 }

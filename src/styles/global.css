@@ -154,6 +154,7 @@ a:hover { text-decoration-color: currentColor; }
 .entradas .miniatura img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .etiqueta { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--verde-cafetal); }
 .vacio { padding: 72px 0; color: var(--secundario); }
+.fecha-corta { display: none; }
 
 /* Blog: entrada en una columna centrada. */
 .articulo { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
@@ -163,7 +164,7 @@ a:hover { text-decoration-color: currentColor; }
 .cabeza-entrada h1 { font-size: clamp(34px, 4.4vw, 50px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 20px; }
 .cabeza-entrada .entradilla { font-size: 21px; line-height: 1.5; margin: 0 0 24px; }
 .meta { font-size: 15px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
-.meta span + span::before { content: "·"; margin-right: 16px; }
+.meta > span + span::before { content: "·"; margin-right: 16px; }
 /* Los nombres de modelo no se parten por el guion, salvo en móvil, donde no caben. */
 .nombre { white-space: nowrap; }
 .cabeza-entrada h1.con-bandera { position: relative; display: inline-block; padding-bottom: 14px; }
@@ -217,4 +218,6 @@ figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
   .banda { height: 160px; }
   .nombre { white-space: normal; }
   .cabeza-entrada h1 { font-size: 30px; }
+  .fecha-larga { display: none; }
+  .fecha-corta { display: inline; }
 }

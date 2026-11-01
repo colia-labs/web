@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { render } from "astro:content";
 import { textos, enlaces, enIdioma, type Idioma } from "../i18n/textos";
-import { fechaLarga, minutosLectura, type Entrada } from "../lib/blog";
+import { fechaLarga, fechaCorta, minutosLectura, type Entrada } from "../lib/blog";
 
 interface Props {
   idioma: Idioma;
@@ -37,7 +37,7 @@ const franja = d.banderaLugar
     <p class="entradilla">{d.entradilla}</p>
     <div class="meta">
       <span>{d.autor}</span>
-      <span><time datetime={d.fecha.toISOString().slice(0, 10)}>{fechaLarga(d.fecha, idioma)}</time></span>
+      <span><time datetime={d.fecha.toISOString().slice(0, 10)}><span class="fecha-larga">{fechaLarga(d.fecha, idioma)}</span><span class="fecha-corta">{fechaCorta(d.fecha)}</span></time></span>
       <span>{minutosLectura(entrada.body)} {t.blog.lectura}</span>
     </div>
   </div>

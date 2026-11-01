@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { textos, enIdioma, type Idioma } from "../i18n/textos";
-import { entradas, nombreEntrada, fechaLarga } from "../lib/blog";
+import { entradas, nombreEntrada, fechaLarga, fechaCorta } from "../lib/blog";
 
 interface Props {
   idioma: Idioma;
@@ -38,7 +38,7 @@ const lista = await entradas(idioma);
               <p>{e.data.entradilla}</p>
               <p class="meta">
                 <span class="etiqueta">{t.blog.etiquetas[e.data.etiqueta]}</span>
-                <time datetime={e.data.fecha.toISOString().slice(0, 10)}>{fechaLarga(e.data.fecha, idioma)}</time>
+                <time datetime={e.data.fecha.toISOString().slice(0, 10)}><span class="fecha-larga">{fechaLarga(e.data.fecha, idioma)}</span><span class="fecha-corta">{fechaCorta(e.data.fecha)}</span></time>
               </p>
             </div>
           </li>
