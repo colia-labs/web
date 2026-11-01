@@ -3,7 +3,7 @@ titulo: "Presentamos Sibundoy-Translate-1.7B"
 nombre: "Sibundoy-Translate-1.7B"
 entradilla: "Nuestro primer modelo traduce de inglés a español. Tiene 1.700 millones de parámetros y está pensado para funcionar en tus equipos de hoy. Hacerlo nos enseñó mucho, y esperamos que te sea útil."
 autor: "Rubén Salas"
-fecha: 2026-11-01
+fecha: 2026-11-03
 etiqueta: modelo
 portada: ../../../assets/sibundoy1.png
 portadaAlt: "Ilustración del valle de Sibundoy, en el Putumayo, con campos verdes y montañas con neblina"
