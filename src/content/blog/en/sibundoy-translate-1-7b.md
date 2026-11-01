@@ -236,6 +236,8 @@ It also shows one of its errors: «admisiones hospitalarias» is a calque of the
 
 **The model.** Sibundoy-Translate-1.7B inherits the LFM Open License v1.0 from LFM3, because it contains that model. It's free for research and for commercial use by people and companies with less than USD 10 million in annual revenue. Above that figure, commercial use isn't covered and you need to ask Liquid AI for permission. It isn't an open-source license in the strict sense: these are open weights with a commercial limit. With the model we publish the license text and state that it's a modified version of LFM3-1.7B-Base.
 
+**The code.** It's under the MIT license: you can use, change and share it. It's at [colia-labs/sibundoy-translate](https://github.com/colia-labs/sibundoy-translate).
+
 **The data.** We don't publish the training data, only the model. These are its sources and licenses:
 
 | Source | What it provides | License |
