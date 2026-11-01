@@ -26,7 +26,6 @@ npm test         # tests for the language redirect
 | `public/_redirects` | Short links on Cloudflare Pages, like `colia.org/discord` |
 | `functions/_middleware.js` | Cloudflare function that sends people to `/es/` when their browser prefers Spanish |
 | `herramientas/` | Scripts that generate the share image and the icons in `public/` |
-| `maquetas/` | The mockups the design came from. Not published |
 
 ## Writing a post
 

@@ -230,7 +230,7 @@ figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
   .portada p { font-size: 19px; }
   .seccion { padding: 56px 0; }
   .banda { height: 160px; }
-  /* Hasta 30 px, pero nunca tan grande que un nombre como Sibundoy-Translate-1.7B (unas 10,6 veces su cuerpo) no quepa en una línea. */
+  /* Hasta 30 px, pero nunca tan grande que un nombre largo, de unas 10,6 veces su cuerpo, no quepa en una línea. */
   .cabeza-entrada h1 { font-size: min(30px, calc((100vw - 48px) / 10.8)); }
   .entradas h2 { font-size: min(26px, calc((100vw - 48px) / 10.8)); }
   .fecha-larga { display: none; }

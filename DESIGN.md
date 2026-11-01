@@ -6,7 +6,7 @@ description: Web del laboratorio y la comunidad ColIA. Una sola página, en ingl
 
 # colia.org
 
-> Sale de la maqueta C («Tierra»), que está en `maquetas/`.
+> Sale de la maqueta C («Tierra»).
 
 Este archivo manda sobre la interfaz de la web: colores, tipografía, espacios y componentes. La marca (nombre, logo, colores de marca y voz) es de `marca/MARCA.md`, en el repo `colia-labs/colia`. Si los dos dicen cosas distintas, manda `MARCA.md` y hay que avisar a Rubén.
 
@@ -25,7 +25,7 @@ colia.org presenta ColIA: qué es, qué hace, cómo trabaja y cómo unirse. Detr
 
 Tres familias de color, cada una con su papel.
 
-**Base, como ColIA-Local**
+**Base**
 
 - **Tinta (#121212):** texto principal sobre papel y sobre crudo.
 - **Papel (#F4F4F4):** fondo de las secciones neutras.
@@ -84,7 +84,7 @@ colors:
 
 ## Typography
 
-Las mismas familias que la marca y ColIA-Local, servidas desde la propia web, sin Google Fonts:
+Las mismas familias que la marca, servidas desde la propia web, sin Google Fonts:
 
 - **Atkinson Hyperlegible Next** para todo el texto.
 - **Atkinson Hyperlegible Mono** para el correo, los números de los principios y cualquier dato que se copie.
@@ -193,7 +193,6 @@ rounded:
   - `portada.png`: el Eje Cafetero, con cafetales, palmas de cera y un nevado.
   - `biodiversidad.png`: frailejones, orquídea, colibrí, cóndor, café, heliconias y helechos, sobre crudo.
   - `ColIA.png`: paisajes de Colombia con el logo y el nombre en el centro. Portada del post de presentación de ColIA.
-  - `sibundoy1.png`: el valle de Sibundoy. Reservada para la entrada del blog que presente Sibundoy-Translate-1.7B; no va en la página principal.
 
 Son ilustraciones generadas con IA. Para la web final se pueden sustituir por fotos reales con licencia libre, fotos propias o ilustraciones encargadas.
 
@@ -215,7 +214,7 @@ Son ilustraciones generadas con IA. Para la web final se pueden sustituir por fo
 
 **Fila de proyecto.** Nombre en `item-title`, estado a la derecha, descripción en texto secundario y, debajo, la línea de la bandera.
 
-**Línea de la bandera del lugar.** En la entrada del blog que presenta un modelo, bajo su nombre en el título, va una línea de 6 px con los colores de la bandera del lugar que le da nombre. Sibundoy: verde `#1E7B34`, amarillo `#F2D21B` y blanco `#FFFFFF`, en franjas iguales, según Rubén. Los tonos del verde y el amarillo están ajustados a la paleta de la web.
+**Línea de la bandera del lugar.** En la entrada del blog que presenta un modelo, bajo su nombre en el título, va una línea de 6 px con los colores de la bandera del lugar que le da nombre.
 
 **Estado del proyecto** («In development», «Coming soon»). Punto ámbar de 6 px y texto secundario de 14 px.
 

@@ -3,7 +3,7 @@ import type { Idioma } from "../i18n/textos";
 
 export type Entrada = CollectionEntry<"blog">;
 
-/** Nombre de la entrada sin el idioma: «en/sibundoy-translate-1-7b» → «sibundoy-translate-1-7b». */
+/** Nombre de la entrada sin el idioma: «en/hola-somos-colia» → «hola-somos-colia». */
 export const nombreEntrada = (e: Entrada) => e.id.split("/").slice(1).join("/");
 
 /** Entradas de un idioma, de la más nueva a la más vieja. Los borradores solo se ven con `astro dev`. */
