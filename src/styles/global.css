@@ -145,8 +145,6 @@ a:hover { text-decoration-color: currentColor; }
 .entradas .meta .etiqueta { margin-top: 0; }
 .entradas h2 { font-size: 26px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; }
 .entradas h2 a { text-decoration: none; }
-/* En el índice el título es más pequeño y el nombre cabe entero también en móvil. */
-.entradas .nombre { white-space: nowrap; }
 .entradas h2 a:hover { text-decoration: underline; text-decoration-color: var(--linea-marcada); }
 .entradas p { margin: 0; color: var(--secundario); max-width: 64ch; }
 /* Sin portada, la miniatura queda como un hueco crudo del mismo tamaño. */
@@ -165,7 +163,7 @@ a:hover { text-decoration-color: currentColor; }
 .cabeza-entrada .entradilla { font-size: 21px; line-height: 1.5; margin: 0 0 24px; }
 .meta { font-size: 15px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .meta > span + span::before { content: "·"; margin-right: 16px; }
-/* Los nombres de modelo no se parten por el guion, salvo en móvil, donde no caben. */
+/* Los nombres de modelo no se parten por el guion. */
 .nombre { white-space: nowrap; }
 .cabeza-entrada h1.con-bandera { position: relative; display: inline-block; padding-bottom: 14px; }
 .cabeza-entrada h1.con-bandera::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--bandera-lugar); }
@@ -228,8 +226,9 @@ figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
   .portada p { font-size: 19px; }
   .seccion { padding: 56px 0; }
   .banda { height: 160px; }
-  .nombre { white-space: normal; }
-  .cabeza-entrada h1 { font-size: 30px; }
+  /* Hasta 30 px, pero nunca tan grande que un nombre como Sibundoy-Translate-1.7B (unas 10,6 veces su cuerpo) no quepa en una línea. */
+  .cabeza-entrada h1 { font-size: min(30px, calc((100vw - 48px) / 10.8)); }
+  .entradas h2 { font-size: min(26px, calc((100vw - 48px) / 10.8)); }
   .fecha-larga { display: none; }
   .fecha-corta { display: inline; }
 }
