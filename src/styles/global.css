@@ -20,6 +20,8 @@
 * { box-sizing: border-box; }
 
 html { scroll-padding-top: 88px; }
+/* Los enlaces internos (como «parte técnica» en el blog) deslizan la página, salvo si se pide menos movimiento. */
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
 body {
   margin: 0;
@@ -148,7 +150,7 @@ a:hover { text-decoration-color: currentColor; }
 .vacio { padding: 72px 0; color: var(--secundario); }
 
 /* Blog: entrada en una columna centrada. */
-.articulo { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.articulo { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .cabeza-entrada { background: var(--crudo); padding: 56px 0 48px; }
 .volver { display: inline-block; margin-bottom: 24px; font-size: 16px; text-decoration-color: rgb(18 18 18 / 0.35); }
 .cabeza-entrada .etiqueta { display: block; margin: 0 0 16px; }
@@ -158,8 +160,8 @@ a:hover { text-decoration-color: currentColor; }
 .meta span + span::before { content: "·"; margin-right: 16px; }
 /* Los nombres de modelo no se parten por el guion, salvo en móvil, donde no caben. */
 .nombre { white-space: nowrap; }
-.nombre.con-bandera { position: relative; display: inline-block; padding-bottom: 14px; }
-.nombre.con-bandera::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--bandera-lugar); }
+.cabeza-entrada h1.con-bandera { position: relative; display: inline-block; padding-bottom: 14px; }
+.cabeza-entrada h1.con-bandera::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--bandera-lugar); }
 
 .portada-entrada { position: relative; }
 .portada-entrada::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 50%; background: var(--crudo); }
@@ -170,7 +172,8 @@ figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
 .cuerpo { padding: 56px 0 72px; }
 .cuerpo h2 { font-size: 28px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 16px; }
 .cuerpo h2:first-child { margin-top: 0; }
-.cuerpo p, .cuerpo li { max-width: 64ch; }
+.cuerpo .aviso { max-width: none; text-align: center; margin: 0 0 40px; color: var(--secundario); }
+.cuerpo .nota { font-size: 15px; line-height: 1.6; color: var(--secundario); border-left: 2px solid var(--linea); padding-left: 16px; margin: 32px 0; }
 .cuerpo table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 17px; }
 .cuerpo th, .cuerpo td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--linea); vertical-align: top; }
 .cuerpo th { font-weight: 600; font-size: 15px; color: var(--secundario); }
@@ -178,6 +181,12 @@ figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
 .cuerpo thead:not(:has(th:not(:empty))) { display: none; }
 .cuerpo pre { background: var(--gris-suave) !important; color: var(--tinta) !important; border-radius: 10px; padding: 16px 20px; overflow-x: auto; margin: 24px 0; }
 .cuerpo code { font-family: "Atkinson Hyperlegible Mono", monospace; font-size: 15px; line-height: 1.65; }
+.cuerpo .codigo { position: relative; }
+.cuerpo .codigo pre { padding-right: 56px; }
+.cuerpo .copiar { position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; color: var(--secundario); background: var(--papel); border: 1px solid var(--linea); border-radius: 6px; cursor: pointer; }
+.cuerpo .copiar:hover { color: var(--verde-cafetal); border-color: var(--linea-marcada); }
+.cuerpo .notas-titulo { font-size: 15px; font-weight: 600; color: var(--secundario); margin: 0 0 8px; }
+.cuerpo .footnotes { font-size: 15px; color: var(--secundario); margin-top: 72px; }
 .cuerpo p code, .cuerpo td code { background: var(--gris-suave); border-radius: 4px; padding: 1px 6px; }
 
 .cierre { background: var(--crudo); padding: 48px 0; }

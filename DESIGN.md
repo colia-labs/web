@@ -6,7 +6,7 @@ description: Web del laboratorio y la comunidad ColIA. Una sola página, en ingl
 
 # colia.org
 
-> **Borrador.** Sale de la maqueta C («Tierra»), elegida por Rubén el 30 de octubre de 2026.
+> Sale de la maqueta C («Tierra»), que está en `maquetas/`.
 
 Este archivo manda sobre la interfaz de la web: colores, tipografía, espacios y componentes. La marca (nombre, logo, colores de marca y voz) es de `marca/MARCA.md`, en el repo `colia-labs/colia`. Si los dos dicen cosas distintas, manda `MARCA.md` y hay que avisar a Rubén.
 
@@ -192,14 +192,14 @@ rounded:
 - **Archivos actuales**, generados con Canva:
   - `portada.png`: el Eje Cafetero, con cafetales, palmas de cera y un nevado.
   - `biodiversidad.png`: frailejones, orquídea, colibrí, cóndor, café, heliconias y helechos, sobre crudo.
-  - `sibundoy.png`: el valle de Sibundoy. Reservada para la entrada del blog que presente Sibundoy-Translate-1.7B; no va en la página principal.
+  - `sibundoy1.png`: el valle de Sibundoy. Reservada para la entrada del blog que presente Sibundoy-Translate-1.7B; no va en la página principal.
 
 Son ilustraciones generadas con IA. Para la web final se pueden sustituir por fotos reales con licencia libre, fotos propias o ilustraciones encargadas.
 
 ## Iconography
 
 - **Sin iconos de interfaz** salvo los de las redes.
-- **Redes:** logos oficiales de Simple Icons, en un solo color, el del texto, a 20 px. Hoy: GitHub, Hugging Face, X y LinkedIn. Discord se añade cuando exista.
+- **Redes:** logos oficiales de Simple Icons, en un solo color, el del texto, a 20 px. La lista está en `src/i18n/textos.ts`.
 - **Logo de ColIA:** `logo-sobre-crudo.svg` en la cabecera, porque va sobre crudo. Con nombre, a 32 px: nombre a 19 px y separado 10 px, como pide `MARCA.md`.
 
 ## Components
@@ -214,7 +214,7 @@ Son ilustraciones generadas con IA. Para la web final se pueden sustituir por fo
 
 **Fila de proyecto.** Nombre en `item-title`, estado a la derecha, descripción en texto secundario y, debajo, la línea de la bandera.
 
-**Línea de la bandera del lugar.** En la entrada del blog que presenta un modelo, bajo su nombre en el título, va una línea de 6 px con los colores de la bandera del lugar que le da nombre. Sibundoy: verde `#1E7B34`, amarillo `#F2D21B` y blanco `#FFFFFF`, en franjas iguales, según Rubén. Flags of the World la dibuja con negro en lugar de blanco, y está mal. Los tonos del verde y el amarillo están ajustados a la paleta de la web.
+**Línea de la bandera del lugar.** En la entrada del blog que presenta un modelo, bajo su nombre en el título, va una línea de 6 px con los colores de la bandera del lugar que le da nombre. Sibundoy: verde `#1E7B34`, amarillo `#F2D21B` y blanco `#FFFFFF`, en franjas iguales, según Rubén. Los tonos del verde y el amarillo están ajustados a la paleta de la web.
 
 **Estado «Coming soon».** Punto ámbar de 6 px y texto secundario de 14 px.
 

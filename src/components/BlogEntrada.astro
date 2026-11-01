@@ -14,7 +14,7 @@ const t = textos[idioma];
 const d = entrada.data;
 const { Content } = await render(entrada);
 
-// El título se parte alrededor del nombre del modelo para pintarlo sin cortes y con la bandera de su lugar debajo.
+// El título se parte alrededor del nombre del modelo para pintarlo sin cortes; la bandera de su lugar subraya el título entero.
 const [antes, despues] = d.nombre && d.titulo.includes(d.nombre) ? d.titulo.split(d.nombre) : [d.titulo, ""];
 const franja = d.banderaLugar
   ? `linear-gradient(to right, ${d.banderaLugar
@@ -27,11 +27,9 @@ const franja = d.banderaLugar
   <div class="articulo">
     <a class="volver" href={enIdioma(idioma, "/blog/")}>{t.blog.volver}</a>
     <span class="etiqueta">{t.blog.etiquetas[d.etiqueta]}</span>
-    <h1>
+    <h1 class:list={[{ "con-bandera": franja }]} style={franja ? `--bandera-lugar: ${franja}` : undefined}>
       {antes}
-      {d.nombre && d.titulo.includes(d.nombre) && (
-        <span class:list={["nombre", { "con-bandera": franja }]} style={franja ? `--bandera-lugar: ${franja}` : undefined}>{d.nombre}</span>
-      )}
+      {d.nombre && d.titulo.includes(d.nombre) && <span class="nombre">{d.nombre}</span>}
       {despues}
     </h1>
     <p class="entradilla">{d.entradilla}</p>
@@ -52,7 +50,7 @@ const franja = d.banderaLugar
   </div>
 )}
 
-<article class="cuerpo">
+<article class="cuerpo" data-copiar={t.blog.copiar} data-copiado={t.blog.copiado}>
   <div class="articulo">
     <Content />
   </div>
@@ -65,3 +63,33 @@ const franja = d.banderaLugar
     <p><a href={enlaces.discussions}>{t.blog.cierreEnlace}</a></p>
   </div>
 </section>
+
+<script>
+  // Añade un botón «Copiar» a cada bloque de código del artículo.
+  const svg = (trazo: string) =>
+    `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${trazo}</svg>`;
+  const iconoCopiar = svg('<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/>');
+  const iconoCopiado = svg('<path d="M5 12l5 5L20 7"/>');
+  const cuerpo = document.querySelector<HTMLElement>(".cuerpo");
+  for (const pre of cuerpo?.querySelectorAll("pre") ?? []) {
+    const caja = document.createElement("div");
+    caja.className = "codigo";
+    pre.replaceWith(caja);
+    caja.append(pre);
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "copiar";
+    boton.innerHTML = iconoCopiar;
+    boton.title = boton.ariaLabel = cuerpo!.dataset.copiar!;
+    boton.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(pre.innerText.trimEnd());
+      boton.innerHTML = iconoCopiado;
+      boton.title = boton.ariaLabel = cuerpo!.dataset.copiado!;
+      setTimeout(() => {
+        boton.innerHTML = iconoCopiar;
+        boton.title = boton.ariaLabel = cuerpo!.dataset.copiar!;
+      }, 1500);
+    });
+    caja.append(boton);
+  }
+</script>
