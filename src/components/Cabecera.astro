@@ -21,7 +21,7 @@ const inicio = enIdioma(idioma, "/");
       <a href={`${inicio}#work`}>{t.menu.proyectos}</a>
       <a href={`${inicio}#principles`}>{t.menu.principios}</a>
       <a href={`${inicio}#join`}>{t.menu.unete}</a>
-      {hayBlog && <a href={enIdioma(idioma, "/blog/")}>{t.menu.blog}</a>}
+      {hayBlog && <a class="menu-blog" href={enIdioma(idioma, "/blog/")}>{t.menu.blog}</a>}
       <span class="idioma">
         {idioma === "en" ? <b>EN</b> : <a href={rutaOtroIdioma} hreflang="en" data-idioma="en" aria-label="English">EN</a>}
         ·

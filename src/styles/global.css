@@ -209,7 +209,10 @@ figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
 /* Móvil. */
 @media (max-width: 720px) {
   body { font-size: 17px; }
-  .menu > a { display: none; }
+  /* En móvil solo queda el blog: las demás secciones están en la misma portada. */
+  .menu > a:not(.menu-blog) { display: none; }
+  /* El estado va siempre bajo el nombre, para que todos los proyectos queden iguales. */
+  .proyectos .fila { flex-direction: column; align-items: flex-start; gap: 6px; }
   .portada .lienzo { height: 300px; min-height: 0; }
   .portada .panel { position: static; width: auto; border-radius: 0; padding: 32px 24px; }
   .tras-portada { display: none; }
