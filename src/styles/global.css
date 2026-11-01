@@ -208,7 +208,16 @@ figcaption { font-size: 14px; color: var(--secundario); margin-top: 10px; }
 
 /* Móvil. */
 @media (max-width: 720px) {
-  body { font-size: 17px; }
+  body { font-size: 16px; }
+  .cuerpo { padding: 40px 0 56px; }
+  .cuerpo h2 { font-size: 22px; margin-top: 40px; }
+  .cuerpo .nota { font-size: 14px; }
+  .cuerpo code { font-size: 13px; }
+  /* Las tablas anchas se desplazan dentro de su caja (div.tabla, de src/lib/tablas.mjs) en vez de ensanchar la página. */
+  .cuerpo .tabla { overflow-x: auto; margin: 24px 0; }
+  .cuerpo .tabla table { margin: 0; font-size: 14px; }
+  .cuerpo th { font-size: 13px; }
+  .cuerpo th, .cuerpo td { padding: 8px 12px 8px 0; min-width: 4.5em; }
   /* En móvil solo queda el blog: las demás secciones están en la misma portada. */
   .menu > a:not(.menu-blog) { display: none; }
   /* El estado va siempre bajo el nombre, para que todos los proyectos queden iguales. */
