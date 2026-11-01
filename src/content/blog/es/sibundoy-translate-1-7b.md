@@ -9,7 +9,7 @@ portada: ../../../assets/sibundoy1.png
 portadaAlt: "Ilustración del valle de Sibundoy, en el Putumayo, con campos verdes y montañas con neblina"
 portadaPie: "El valle de Sibundoy, en el Putumayo, Colombia. Ilustración."
 banderaLugar: ["#1E7B34", "#F2D21B", "#FFFFFF"]
-# Borrador: no se publica hasta que Rubén complete los TODO y cambie esto a false. La fecha también es provisional.
+# Borrador: se publica al cambiar esto a false. La fecha también es provisional.
 borrador: true
 ---
 
@@ -18,22 +18,22 @@ borrador: true
 ## En pocas palabras
 
 - **Qué hace:** Sibundoy-Translate-1.7B es un modelo listo para traducir del inglés al español en tu propio equipo, párrafo a párrafo.
-- **Dónde funciona:** ocupa unos 1,3 GB de memoria y funciona a buena velocidad con GPU o sin ella.
+- **Dónde funciona:** ocupa unos 1,3 GB de memoria y funciona con GPU (tarjeta gráfica) o sin ella.
 - **Qué tan rápido:** traduce un artículo de 900 palabras en unos 15 segundos con una GPU de 6 GB, o en un minuto sin GPU.
 - **Cuánto mejoró:** traduce mejor que el modelo del que partimos en todos los exámenes. En medicina gana 5,8 puntos de COMET (una medida automática de calidad de traducción).
 - **Frente a otros:** todavía no supera a modelos algo más grandes, de 2.000 a 4.000 millones de parámetros. Se queda cerca, pero por detrás.
 - **En qué destaca:** respeta el formato de páginas web y documentos, y escribe un español neutro que lo hace útil para cualquier país hispanohablante.
-- **Áreas a mejorar:** la literatura, las redes sociales y los textos de varios párrafos enviados de una sola vez aún le cuestan un poco (por ese motivo recomendamos hacer peticiones enviando al modelo párrafo a párrafo).
+- **Áreas a mejorar:** aún le cuestan la literatura, las redes sociales y los textos de varios párrafos enviados de una vez. Por eso recomendamos enviarle un párrafo por petición.
 
 ## Por qué un traductor
 
-Soy Rubén y hago ColIA. **Sibundoy-Translate-1.7B** nace de una necesidad personal. Cada día busco aprender algo nuevo sobre inteligencia artificial y tecnología. Mucho de ese contenido se publica en inglés y no siempre está disponible en español. Adicionalmente, en Colombia y en buena parte de América Latina el nivel de inglés es bajo, incluido el mío.
+Soy Rubén y hago ColIA. **Sibundoy-Translate-1.7B** nace de una necesidad personal. Cada día busco aprender algo nuevo sobre inteligencia artificial y tecnología. Mucho de ese contenido se publica en inglés y no siempre está disponible en español. Además, en Colombia y en buena parte de América Latina el nivel de inglés es bajo, incluido el mío.
 
-Quería leer ese contenido sin depender del traductor del navegador ni de servicios de pago, que en nuestras regiones no están al alcance de todos. Entonces me di cuenta de que los modelos de hoy permiten construir software personal para resolver nuestras propias necesidades. Así nació mi lector RSS: traduce artículos, noticias y papers de arXiv al español con un modelo propio, sin conexión a internet.
+Quería leer ese contenido sin depender del traductor del navegador ni de servicios de pago, que en nuestras regiones no están al alcance de todos. Entonces me di cuenta de que los modelos de hoy permiten construir software personal para resolver nuestras propias necesidades. Así nació mi lector RSS, una app que reúne lo que publican las webs que sigues. Traduce al español artículos, noticias y estudios de arXiv (un archivo abierto de investigación científica). Lo hace con un modelo propio, sin conexión a internet.
 
-Pero surgió otro problema: encontrar un modelo lo bastante pequeño para cualquier equipo, sin hardware de última generación. Y a la vez, lo bastante capaz para traducir bien textos con fórmulas, enlaces, menciones o LaTeX.
+Pero surgió otro problema: encontrar un modelo lo bastante pequeño para cualquier equipo, sin hardware de última generación. Y a la vez, lo bastante capaz para traducir bien textos con enlaces, menciones o fórmulas en LaTeX (el formato en que se escriben las fórmulas científicas).
 
-Así nace Sibundoy-Translate-1.7B: un traductor de inglés a español que cabe en casi cualquier equipo, sin necesidad de GPU, y que ya casi[^1] resuelve el problema principal de mi lector RSS y de mi búsqueda de aprendizaje en otra lengua. Además, me permitió experimentar y aprender, uno de los fines de ColIA.
+Así nace Sibundoy-Translate-1.7B: un traductor de inglés a español que cabe en casi cualquier equipo, sin necesidad de GPU. Ya casi[^1] resuelve el problema principal de mi lector RSS, y me deja aprender de lo que se publica en otra lengua. Además, me permitió experimentar y aprender, uno de los fines de ColIA.
 
 ## Por qué Sibundoy
 
@@ -45,12 +45,12 @@ También quiero mostrar que el valle de Sibundoy, el Putumayo, Colombia y Latino
 
 ## Qué aprendimos
 
-Este ha sido uno de los experimentos más interesantes e importantes. Nos deja varias enseñanzas útiles para las siguientes versiones del modelo, que esperamos sean aún mejores.
+Nos deja estas enseñanzas para las próximas versiones del modelo:
 
 - **Elegir el profesor con datos:** probamos cuatro modelos grandes antes de usar uno para traducir datos. Eso nos ayudó a elegir el mejor: Gemma 4 31B.
 - **El modelo base aprendió mejor que el de chat** para una tarea tan concreta como traducir. Aún no sabemos por qué. Nuestra hipótesis es que el modelo base no trae los hábitos de chat del modelo instruct, así que aprende la tarea sin tener que desaprender nada.
-- **Guardar copias por el camino:** en el entrenamiento de la v1 tuvimos un corte y perdimos el 80 % del trabajo, alrededor de una hora. En la v2, Colab apagaba las máquinas a los 20 minutos porque nadie les mandaba órdenes. Como ya habíamos aprendido la lección de la v1, pudimos seguir cada vez desde la última copia guardada.
-- **Medir siempre nos dirá la verdad de los fallos:** creíamos que el límite sería la longitud del texto. Al medirlo, vimos que era otro: los saltos de párrafo. El modelo falla con textos que tienen varios párrafos separados por líneas en blanco.
+- **Guardar copias por el camino:** en una primera prueba, que no publicamos, tuvimos un corte y perdimos el 80 % del trabajo, alrededor de una hora. Esta vez, Colab apagaba las máquinas a los 20 minutos porque nadie les mandaba órdenes. Como ya habíamos aprendido la lección, pudimos seguir cada vez desde la última copia guardada.
+- **Medir muestra dónde está el fallo de verdad:** creíamos que el límite sería la longitud del texto. Al medirlo, vimos que era otro: los saltos de párrafo. El modelo falla con textos que tienen varios párrafos separados por líneas en blanco.
 - **Probar la receta tal como la usará otra persona:** en nuestro servidor de siempre todo funcionaba. Con el comando limpio, las respuestas llegaban vacías porque faltaba una opción: sin ella, el modelo enviaba la traducción como razonamiento y no como respuesta.
 
 ## Qué sigue
@@ -63,13 +63,11 @@ Queremos seguir aprendiendo y mejorando. La siguiente versión traducirá en los
 - **Entrenar con preferencias:** enseñarle a preferir la mejor de dos traducciones de la misma frase, para que elija traducciones más naturales y fieles.
 - **Adicionales:** más adelante queremos probar una versión más pequeña, para que en un portátil sin GPU vaya el doble de rápido y quizá llegar a teléfonos móviles.
 
-<aside class="nota"><strong>Recordatorio:</strong> <em>si quieres unirte y ayudarnos en ColIA a construir y aprender cómo hacer mejor las cosas, ¡escríbenos a <a href="mailto:hola@colia.org">hola@colia.org</a>! Estaremos encantados de recibirte.</em></aside>
-
 ---
 
 ## Sección técnica
 
-Desde aquí, los detalles: 
+Desde aquí, los detalles:
 - Qué es exactamente
 - Cómo lo entrenamos
 - Cómo lo medimos
@@ -85,7 +83,7 @@ Desde aquí, los detalles:
 | Tarea | Traducción de inglés a español, conservando HTML y Markdown |
 | Datos de entrenamiento | 70.605 pares de textos de fuentes abiertas, y otros 500 pares para validar |
 | Parámetros | 1.700 millones |
-| Tamaño del fichero | 1,1 GB (GGUF Q4_K_M) |
+| Tamaño del archivo | 1,1 GB en GGUF Q4_K_M, el formato de llama.cpp, comprimido a unos 4 bits por parámetro |
 | Licencia | LFM Open License v1.0, heredada de LFM3 (ver [Licencias](#licencias)) |
 | Modelo | [Hugging Face](https://huggingface.co/colia-labs/Sibundoy-Translate-1.7B) (también en [GGUF](https://huggingface.co/colia-labs/Sibundoy-Translate-1.7B-GGUF)) |
 | Código | [GitHub](https://github.com/colia-labs/sibundoy-translate) |
@@ -104,23 +102,21 @@ Los pares tienen tres orígenes:
 
 | Origen | Pares | Fuentes |
 |---|---|---|
-| Traducción humana | 36% | Global Voices, SciELO (los propios autores), documentación de Python y Tatoeba |
-| Español escrito por una persona; inglés traducido por una máquina | 28% | FineTranslations: webs en español que Hugging Face tradujo al inglés con Gemma 3 27B. Lo usamos al revés, así que el modelo aprende a escribir un español humano |
-| Traducido por un modelo «profesor» | 36% | Wikinews, PLOS y arXiv, traducidos por Gemma 4 31B y, en menor medida, por GLM 5.3 Flash |
+| Traducción humana | 36 % | Global Voices, SciELO (los propios autores), documentación de Python y Tatoeba |
+| Español escrito por una persona; inglés traducido por una máquina | 28 % | FineTranslations: webs en español que Hugging Face tradujo al inglés con Gemma 3 27B. Lo usamos al revés, así que el modelo aprende a escribir un español humano |
+| Traducido por un modelo «profesor» | 36 % | Wikinews, PLOS y arXiv, traducidos por Gemma 4 31B y, en menor medida, por GLM 5.3 Flash |
 
-Como comentamos anteriormente, antes de elegir el profesor medimos cuatro candidatos con los mismos exámenes, y ganó Gemma 4 31B.
+Antes de elegir el profesor medimos cuatro candidatos con los mismos exámenes, y ganó Gemma 4 31B.
 
 Después limpiamos: quitamos los pares repetidos, los que estaban sin traducir y los que se parecían a los exámenes. Revisamos las traducciones del profesor con comprobaciones automáticas: cifras, enlaces, etiquetas HTML y longitud. Hubo 760 fallos graves, un 0,5 % del total: en su mayoría se corrigieron y el resto se descartaron.
 
 ### El entrenamiento
 
-Entrenamos dos versiones a la vez: una sobre el modelo base de LFM3 y otra sobre su versión de chat (instruct). Cada una corrió en una GPU L4 de Google Colab durante unas 6 horas.
+Entrenamos dos candidatos a la vez: una sobre el modelo base de LFM3 y otra sobre su versión de chat (instruct). Cada una corrió en una GPU L4 de Google Colab durante unas 6 horas.
 
-**Ganó la versión base en todas las medidas.** Por eso Sibundoy-Translate parte de LFM3-1.7B-Base.
+**Ganó el candidato base en todas las medidas.** Por eso Sibundoy-Translate-1.7B parte de LFM3-1.7B-Base.
 
 No salió a la primera. Colab apagaba las máquinas a los 20 minutos de entrenar, y tardamos tres intentos en entender por qué. La causa: si nadie le manda órdenes a la máquina, Colab la da por abandonada, aunque esté trabajando. Lo resolvimos mandándole una orden mínima cada dos minutos y guardando una copia del entrenamiento cada 250 pasos. Gracias a esas copias, cada corte solo nos costó unos minutos.
-
-Empezó como una noche que prometía ser larga, por los cortes de Colab. Cuando dimos con la causa, el entrenamiento corrió hasta el final sin más contratiempos.
 
 ## Qué tan bien traduce
 
@@ -156,30 +152,32 @@ Aquí no ganamos, y preferimos contarlo porque en **ColIA** cada derrota tambié
 | TranslateGemma 4B | 82,8 | **87,5** | **87,3** | 86,6 | 88,2 |
 | Gemma 4 E4B | **82,9** | 87,4 | 87,1 | **87,0** | 88,7 |
 
-Cifras de COMET. Sibundoy queda entre 0,1 y 2,5 puntos por debajo de modelos de 2 a 4 mil millones de parámetros. Pensábamos que ganaría en ciencia y medicina, porque abundan en sus datos, pero no fue así: también pierde ahí, por poco. Lo que le falta es calidad general de traducción, no un tipo de texto concreto.
+Cifras de COMET. Sibundoy-Translate-1.7B queda entre 0,1 y 2,5 puntos por debajo de modelos de 2.000 a 4.000 millones de parámetros. Pensábamos que ganaría en ciencia y medicina, porque abundan en sus datos, pero no fue así: también pierde ahí, por poco. Lo que le falta es calidad general de traducción, no un tipo de texto concreto.
 
 Comprobamos que los exámenes no estuvieran en nuestros datos: prácticamente ninguno se repite, salvo el 0,3 % de TICO-19 y el 2,1 % de FLORES+.
 
 ### Donde sí ganamos
 
-**Conserva el formato.** Nuestro examen tiene 213 textos, y 47 traen HTML o Markdown. Sibundoy conservó el formato en 210 de los 213; los demás modelos pequeños, entre 189 y 208. Si traduces páginas web o documentación, esto importa tanto como la calidad y es justo nuestro punto fuerte.
+**Conserva el formato.** Nuestro examen tiene 213 textos, y 47 traen HTML o Markdown. Sibundoy-Translate-1.7B conservó el formato en 210 de los 213; los demás modelos pequeños, entre 189 y 208. Si traduces páginas web o documentación, esto importa tanto como la calidad y es justo nuestro punto fuerte.
 
 **Escribe un español neutro.** En WMT24++ usó formas de España en el 0,4 % de las frases; los demás modelos pequeños, entre el 1,4 % y el 1,9 %. Tampoco usó regionalismos de un solo país, como el voseo o «ahorita». Nuestro detector solo busca palabras concretas, así que un estilo regional más sutil no lo vería.
 
 ## Receta recomendada
 
-La medimos en las dos máquinas de nuestras recetas: un sobremesa con una RTX 3050 de 6 GB y un portátil sin GPU (i7-13620H). Usamos llama.cpp b11940 en el portátil y b11946 en el sobremesa.
+La medimos en las dos máquinas de nuestras recetas: un computador de escritorio con una RTX 3050 de 6 GB y un portátil sin GPU (i7-13620H). Usamos llama.cpp b11940 en el portátil y b11946 en el de escritorio.
 
-| | Sobremesa · RTX 3050 6 GB | Portátil · solo CPU |
+tok/s son tokens por segundo; un token es un trozo de palabra.
+
+| | Escritorio · RTX 3050 6 GB | Portátil · solo CPU |
 |---|---|---|
 | Generación | **121 tok/s** | **36 tok/s** |
 | Lectura del texto de entrada | ~4.600 tok/s | ~215 tok/s |
-| Memoria con `-c 4096` | ~1,3 GB de VRAM | ~1,2 GB de RAM |
+| Memoria con `-c 4096` | ~1,3 GB de VRAM (la memoria de la GPU) | ~1,2 GB de RAM |
 | Artículo de 923 palabras, párrafo a párrafo | **15,5 s** | **57 s** |
 
-tok/s son tokens por segundo; un token es un trozo de palabra. Va exactamente igual de rápido que LFM3-1.7B: el ajuste no cambia la arquitectura.
+Va exactamente igual de rápido que LFM3-1.7B: el ajuste no cambia la arquitectura.
 
-**Sobremesa (GPU):**
+**Escritorio (GPU):**
 
 ```sh
 llama-server -m Sibundoy-Translate-1.7B-Q4_K_M.gguf \
@@ -236,7 +234,7 @@ Ahí se ve también uno de sus errores: «admisiones hospitalarias» es un calco
 
 ## Licencias
 
-**El modelo.** Sibundoy-Translate hereda la LFM Open License v1.0 de LFM3, porque contiene ese modelo. Es libre para investigación y para uso comercial de personas y empresas con menos de 10 millones de dólares de ingresos al año. Por encima de esa cifra, el uso comercial no está cubierto y hay que pedir permiso a Liquid AI. No es una licencia de código abierto en sentido estricto: son pesos abiertos con un límite comercial. Con el modelo publicamos el texto de la licencia y avisamos de que es una versión modificada de LFM3-1.7B-Base.
+**El modelo.** Sibundoy-Translate-1.7B hereda la LFM Open License v1.0 de LFM3, porque contiene ese modelo. Es libre para investigación y para uso comercial de personas y empresas con menos de 10 millones de dólares de ingresos al año. Por encima de esa cifra, el uso comercial no está cubierto y hay que pedir permiso a Liquid AI. No es una licencia de código abierto en sentido estricto: son pesos abiertos con un límite comercial. Con el modelo publicamos el texto de la licencia y avisamos de que es una versión modificada de LFM3-1.7B-Base.
 
 **Los datos.** No publicamos los datos de entrenamiento, solo el modelo. Estas son sus fuentes y licencias:
 
@@ -255,8 +253,8 @@ Ahí se ve también uno de sus errores: «admisiones hospitalarias» es un calco
 
 ## Aviso
 
-Sibundoy-Translate-1.7B es nuestro primer modelo, y es nuevo: puedes encontrar errores y fallos que aún no conocemos. Nos encantaría recibir todos los comentarios posibles para saber dónde mejorar. Cualquier comentario es bienvenido en nuestros canales. No es un modelo perfecto, pero seguimos trabajando para mejorarlo. ¡Nos encantaría tu ayuda!
+Sibundoy-Translate-1.7B es nuestro primer modelo, y es nuevo: puedes encontrar errores y fallos que aún no conocemos. Nos encantaría recibir todos los comentarios posibles para saber dónde mejorar. Escríbenos en [Issues](https://github.com/colia-labs/sibundoy-translate/issues), en [Discussions](https://github.com/orgs/colia-labs/discussions) o a [hola@colia.org](mailto:hola@colia.org). No es un modelo perfecto, pero seguimos trabajando para mejorarlo. ¡Nos encantaría tu ayuda!
 
 ---
 
-[^1]: Casi, porque Sibundoy-Translate-1.7B es un punto de partida que cualquiera puede ajustar para lo que necesite. Yo lo ajustaré para las necesidades concretas de mi lector RSS.
+[^1]: Casi, porque aún le falta un reentrenamiento centrado en el formato de los textos que recibe mi lector RSS. Sibundoy-Translate-1.7B es un punto de partida: cualquiera puede ajustarlo para lo que necesite, como haré yo.

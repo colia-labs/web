@@ -9,7 +9,7 @@ portada: ../../../assets/sibundoy1.png
 portadaAlt: "Illustration of the Sibundoy Valley, in Putumayo, with green fields and misty mountains"
 portadaPie: "The Sibundoy Valley, in Putumayo, Colombia. Illustration."
 banderaLugar: ["#1E7B34", "#F2D21B", "#FFFFFF"]
-# Borrador: no se publica hasta que Rubén complete los TODO y cambie esto a false. La fecha también es provisional.
+# Borrador: se publica al cambiar esto a false. La fecha también es provisional.
 borrador: true
 ---
 
@@ -18,22 +18,22 @@ borrador: true
 ## In short
 
 - **What it does:** Sibundoy-Translate-1.7B is a model ready to translate from English into Spanish on your own computer, paragraph by paragraph.
-- **Where it runs:** it takes about 1.3 GB of memory and runs at a good speed with or without a GPU.
+- **Where it runs:** it takes about 1.3 GB of memory and runs with or without a GPU (graphics card).
 - **How fast:** it translates a 900-word article in about 15 seconds on a 6 GB GPU, or in a minute without a GPU.
 - **How much it improved:** it translates better than the model we started from on every test. In medicine it gains 5.8 COMET points (an automatic measure of translation quality).
 - **Against others:** it doesn't yet beat slightly larger models, with 2 to 4 billion parameters. It comes close, but stays behind.
 - **Where it stands out:** it keeps the formatting of web pages and documents, and it writes neutral Spanish, which makes it useful for any Spanish-speaking country.
-- **What to improve:** literature, social media and texts with several paragraphs sent at once are still a bit hard for it (that's why we recommend sending the model one paragraph per request).
+- **What to improve:** literature, social media and texts with several paragraphs sent at once are still hard for it. That's why we recommend sending it one paragraph per request.
 
 ## Why a translator
 
 I'm Rubén and I make ColIA. **Sibundoy-Translate-1.7B** comes from a personal need. Every day I try to learn something new about artificial intelligence and technology. Much of that content is published in English and isn't always available in Spanish. On top of that, the level of English in Colombia and much of Latin America is low, mine included.
 
-I wanted to read that content without relying on the browser's translator or on paid services, which aren't within everyone's reach in our regions. Then I realized that today's models let us build personal software to solve our own needs. That's how my RSS reader was born: it translates articles, news and arXiv papers into Spanish with a model of its own, with no internet connection.
+I wanted to read that content without relying on the browser's translator or on paid services, which aren't within everyone's reach in our regions. Then I realized that today's models let us build personal software to solve our own needs. That's how my RSS reader was born: an app that gathers what the websites you follow publish. It translates articles, news and papers from arXiv (an open archive of scientific research) into Spanish. It does it with a model of its own, with no internet connection.
 
-But another problem came up: finding a model small enough for any computer, without the latest hardware. And, at the same time, capable enough to translate texts with formulas, links, mentions or LaTeX well.
+But another problem came up: finding a model small enough for any computer, without the latest hardware. And, at the same time, capable enough to translate texts with links, mentions or formulas in LaTeX (the format scientific formulas are written in) well.
 
-That's how Sibundoy-Translate-1.7B was born: an English-to-Spanish translator that fits on almost any computer, with no need for a GPU, and that almost[^1] solves the main problem of my RSS reader and of my search for learning in another language. It also let me experiment and learn, one of the aims of ColIA.
+That's how Sibundoy-Translate-1.7B was born: an English-to-Spanish translator that fits on almost any computer, with no need for a GPU. It almost[^1] solves the main problem of my RSS reader, and it lets me learn from what's published in another language. It also let me experiment and learn, one of the aims of ColIA.
 
 ## Why Sibundoy
 
@@ -45,12 +45,12 @@ I also want to show that the Sibundoy Valley, Putumayo, Colombia and Latin Ameri
 
 ## What we learned
 
-This has been one of our most interesting and important experiments. It leaves us several useful lessons for the next versions of the model, which we hope will be even better.
+It leaves us these lessons for the next versions of the model:
 
 - **Choose the teacher with data:** we tested four large models before using one to translate data. That helped us choose the best one: Gemma 4 31B.
 - **The base model learned better than the chat model** for a task as specific as translating. We don't know why yet. Our hypothesis is that the base model doesn't carry the chat habits of the instruct model, so it learns the task without having to unlearn anything.
-- **Save copies along the way:** while training v1 we had an outage and lost 80% of the work, about an hour. In v2, Colab shut the machines down after 20 minutes because nobody was sending them commands. Since we had learned the lesson from v1, we could resume each time from the last saved copy.
-- **Measuring will always tell us the truth about failures:** we thought the limit would be text length. When we measured it, we saw it was something else: paragraph breaks. The model fails with texts that have several paragraphs separated by blank lines.
+- **Save copies along the way:** in a first attempt, which we didn't publish, we had an outage and lost 80% of the work, about an hour. This time, Colab shut the machines down after 20 minutes because nobody was sending them commands. Since we had already learned the lesson, we could resume each time from the last saved copy.
+- **Measuring shows where the real failure is:** we thought the limit would be text length. When we measured it, we saw it was something else: paragraph breaks. The model fails with texts that have several paragraphs separated by blank lines.
 - **Test the recipe the way someone else will use it:** on our usual server everything worked. With the clean command, the answers came back empty because an option was missing: without it, the model sent the translation as reasoning instead of as the answer.
 
 ## What's next
@@ -62,8 +62,6 @@ We want to keep learning and improving. The next version will translate in both 
 - **Try a pure translator, without chat:** one that receives only the language pair (input and output) and the text, and returns the translation. That way there's no reasoning to turn off and no instruction to remember, and the model is easier to use.
 - **Train with preferences:** teach it to prefer the better of two translations of the same sentence, so it chooses more natural and faithful translations.
 - **More:** later on we want to try a smaller version, so it runs twice as fast on a laptop without a GPU and perhaps reaches mobile phones.
-
-<aside class="nota"><strong>Reminder:</strong> <em>if you'd like to join and help us at ColIA to build and learn how to do things better, write to us at <a href="mailto:hola@colia.org">hola@colia.org</a>! We'll be glad to welcome you.</em></aside>
 
 ---
 
@@ -85,7 +83,7 @@ From here on, the details:
 | Task | Translation from English into Spanish, keeping HTML and Markdown |
 | Training data | 70,605 text pairs from open sources, plus 500 pairs for validation |
 | Parameters | 1.7 billion |
-| File size | 1.1 GB (GGUF Q4_K_M) |
+| File size | 1.1 GB in GGUF Q4_K_M, the llama.cpp format, compressed to about 4 bits per parameter |
 | License | LFM Open License v1.0, inherited from LFM3 (see [Licenses](#licenses)) |
 | Model | [Hugging Face](https://huggingface.co/colia-labs/Sibundoy-Translate-1.7B) (also in [GGUF](https://huggingface.co/colia-labs/Sibundoy-Translate-1.7B-GGUF)) |
 | Code | [GitHub](https://github.com/colia-labs/sibundoy-translate) |
@@ -108,19 +106,17 @@ The pairs have three origins:
 | Spanish written by a person; English translated by a machine | 28% | FineTranslations: Spanish web pages that Hugging Face translated into English with Gemma 3 27B. We use it the other way round, so the model learns to write human Spanish |
 | Translated by a "teacher" model | 36% | Wikinews, PLOS and arXiv, translated by Gemma 4 31B and, to a lesser extent, by GLM 5.3 Flash |
 
-As we mentioned above, before choosing the teacher we measured four candidates on the same tests, and Gemma 4 31B won.
+Before choosing the teacher we measured four candidates on the same tests, and Gemma 4 31B won.
 
 Then we cleaned: we removed repeated pairs, untranslated ones and those that looked like the tests. We checked the teacher's translations automatically: numbers, links, HTML tags and length. There were 760 serious errors, 0.5% of the total: most were fixed and the rest were discarded.
 
 ### The training
 
-We trained two versions at the same time: one on the LFM3 base model and another on its chat version (instruct). Each ran on a Google Colab L4 GPU for about 6 hours.
+We trained two candidates at the same time: one on the LFM3 base model and another on its chat version (instruct). Each ran on a Google Colab L4 GPU for about 6 hours.
 
-**The base version won on every measure.** That's why Sibundoy-Translate starts from LFM3-1.7B-Base.
+**The base candidate won on every measure.** That's why Sibundoy-Translate-1.7B starts from LFM3-1.7B-Base.
 
 It didn't work the first time. Colab shut the machines down after 20 minutes of training, and it took us three attempts to understand why. The cause: if nobody sends the machine commands, Colab considers it abandoned, even while it's working. We solved it by sending it a minimal command every two minutes and saving a copy of the training every 250 steps. Thanks to those copies, each outage cost us only a few minutes.
-
-It started as a night that promised to be long, because of the Colab outages. Once we found the cause, the training ran to the end with no further setbacks.
 
 ## How well it translates
 
@@ -156,13 +152,13 @@ Here we don't win, and we'd rather say so, because at **ColIA** every defeat is 
 | TranslateGemma 4B | 82.8 | **87.5** | **87.3** | 86.6 | 88.2 |
 | Gemma 4 E4B | **82.9** | 87.4 | 87.1 | **87.0** | 88.7 |
 
-COMET scores. Sibundoy is between 0.1 and 2.5 points below models with 2 to 4 billion parameters. We thought it would win in science and medicine, because they're common in its data, but it didn't: it loses there too, by a little. What it lacks is general translation quality, not one specific kind of text.
+COMET scores. Sibundoy-Translate-1.7B is between 0.1 and 2.5 points below models with 2 to 4 billion parameters. We thought it would win in science and medicine, because they're common in its data, but it didn't: it loses there too, by a little. What it lacks is general translation quality, not one specific kind of text.
 
 We checked that the tests weren't in our data: practically none of them repeats, except 0.3% of TICO-19 and 2.1% of FLORES+.
 
 ### Where we do win
 
-**It keeps the formatting.** Our test has 213 texts, and 47 contain HTML or Markdown. Sibundoy kept the formatting in 210 of the 213; the other small models, between 189 and 208. If you translate web pages or documentation, this matters as much as quality, and it's exactly our strong point.
+**It keeps the formatting.** Our test has 213 texts, and 47 contain HTML or Markdown. Sibundoy-Translate-1.7B kept the formatting in 210 of the 213; the other small models, between 189 and 208. If you translate web pages or documentation, this matters as much as quality, and it's exactly our strong point.
 
 **It writes neutral Spanish.** On WMT24++ it used forms from Spain in 0.4% of sentences; the other small models, between 1.4% and 1.9%. It didn't use regionalisms from a single country either, such as *voseo* or «ahorita». Our detector only looks for specific words, so it wouldn't catch a subtler regional style.
 
@@ -170,14 +166,16 @@ We checked that the tests weren't in our data: practically none of them repeats,
 
 We measured it on the two machines we use for our recipes: a desktop with a 6 GB RTX 3050 and a laptop without a GPU (i7-13620H). We used llama.cpp b11940 on the laptop and b11946 on the desktop.
 
+tok/s means tokens per second; a token is a piece of a word.
+
 | | Desktop · RTX 3050 6 GB | Laptop · CPU only |
 |---|---|---|
 | Generation | **121 tok/s** | **36 tok/s** |
 | Reading the input text | ~4,600 tok/s | ~215 tok/s |
-| Memory with `-c 4096` | ~1.3 GB of VRAM | ~1.2 GB of RAM |
+| Memory with `-c 4096` | ~1.3 GB of VRAM (the GPU's memory) | ~1.2 GB of RAM |
 | 923-word article, paragraph by paragraph | **15.5 s** | **57 s** |
 
-tok/s means tokens per second; a token is a piece of a word. It runs exactly as fast as LFM3-1.7B: the fine-tuning doesn't change the architecture.
+It runs exactly as fast as LFM3-1.7B: the fine-tuning doesn't change the architecture.
 
 **Desktop (GPU):**
 
@@ -236,7 +234,7 @@ It also shows one of its errors: «admisiones hospitalarias» is a calque of the
 
 ## Licenses
 
-**The model.** Sibundoy-Translate inherits the LFM Open License v1.0 from LFM3, because it contains that model. It's free for research and for commercial use by people and companies with less than USD 10 million in annual revenue. Above that figure, commercial use isn't covered and you need to ask Liquid AI for permission. It isn't an open-source license in the strict sense: these are open weights with a commercial limit. With the model we publish the license text and state that it's a modified version of LFM3-1.7B-Base.
+**The model.** Sibundoy-Translate-1.7B inherits the LFM Open License v1.0 from LFM3, because it contains that model. It's free for research and for commercial use by people and companies with less than USD 10 million in annual revenue. Above that figure, commercial use isn't covered and you need to ask Liquid AI for permission. It isn't an open-source license in the strict sense: these are open weights with a commercial limit. With the model we publish the license text and state that it's a modified version of LFM3-1.7B-Base.
 
 **The data.** We don't publish the training data, only the model. These are its sources and licenses:
 
@@ -255,8 +253,8 @@ It also shows one of its errors: «admisiones hospitalarias» is a calque of the
 
 ## Notice
 
-Sibundoy-Translate-1.7B is our first model, and it's new: you may find errors and failures we don't know about yet. We'd love to get as much feedback as possible to know where to improve. Any comment is welcome on our channels. It isn't a perfect model, but we keep working to improve it. We'd love your help!
+Sibundoy-Translate-1.7B is our first model, and it's new: you may find errors and failures we don't know about yet. We'd love to get as much feedback as possible to know where to improve. Write to us in [Issues](https://github.com/colia-labs/sibundoy-translate/issues), in [Discussions](https://github.com/orgs/colia-labs/discussions) or at [hola@colia.org](mailto:hola@colia.org). It isn't a perfect model, but we keep working to improve it. We'd love your help!
 
 ---
 
-[^1]: Almost, because Sibundoy-Translate-1.7B is a starting point that anyone can fine-tune for what they need. I'll fine-tune it for the specific needs of my RSS reader.
+[^1]: Almost, because it still needs retraining focused on the format of the texts my RSS reader receives. Sibundoy-Translate-1.7B is a starting point: anyone can fine-tune it for what they need, as I will.
