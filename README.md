@@ -23,6 +23,7 @@ npm test         # tests for the language redirect
 | `src/content/blog/<language>/` | Blog posts in Markdown. The same post in both languages shares its file name |
 | `src/components/`, `src/layouts/` | The pieces of each page |
 | `src/styles/global.css` | All styles. The values come from `DESIGN.md` |
+| `public/_redirects` | Short links on Cloudflare Pages, like `colia.org/discord` |
 | `functions/_middleware.js` | Cloudflare function that sends people to `/es/` when their browser prefers Spanish |
 | `herramientas/` | Scripts that generate the share image and the icons in `public/` |
 | `maquetas/` | The mockups the design came from. Not published |
