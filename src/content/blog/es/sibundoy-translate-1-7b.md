@@ -255,7 +255,7 @@ Ahí se ve también uno de sus errores: «admisiones hospitalarias» es un calco
 
 ## Aviso
 
-Sibundoy-Translate-1.7B es nuestro primer modelo, y es nuevo: puedes encontrar errores y fallos que aún no conocemos. Nos encantaría recibir todos los comentarios posibles para saber dónde mejorar. Escríbenos en [Issues](https://github.com/colia-labs/sibundoy-translate/issues), en [Discussions](https://github.com/orgs/colia-labs/discussions) o a [hola@colia.org](mailto:hola@colia.org). No es un modelo perfecto, pero seguimos trabajando para mejorarlo. ¡Nos encantaría tu ayuda!
+Sibundoy-Translate-1.7B es nuestro primer modelo, y es nuevo: puedes encontrar errores y fallos que aún no conocemos. Nos encantaría recibir todos los comentarios posibles para saber dónde mejorar. Escríbenos en [Discord](https://colia.org/discord), en [Issues](https://github.com/colia-labs/sibundoy-translate/issues), en [Discussions](https://github.com/orgs/colia-labs/discussions) o a [hola@colia.org](mailto:hola@colia.org). No es un modelo perfecto, pero seguimos trabajando para mejorarlo. ¡Nos encantaría tu ayuda!
 
 ---
 

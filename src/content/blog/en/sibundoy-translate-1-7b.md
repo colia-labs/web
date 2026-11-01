@@ -255,7 +255,7 @@ It also shows one of its errors: «admisiones hospitalarias» is a calque of the
 
 ## Notice
 
-Sibundoy-Translate-1.7B is our first model, and it's new: you may find errors and failures we don't know about yet. We'd love to get as much feedback as possible to know where to improve. Write to us in [Issues](https://github.com/colia-labs/sibundoy-translate/issues), in [Discussions](https://github.com/orgs/colia-labs/discussions) or at [hola@colia.org](mailto:hola@colia.org). It isn't a perfect model, but we keep working to improve it. We'd love your help!
+Sibundoy-Translate-1.7B is our first model, and it's new: you may find errors and failures we don't know about yet. We'd love to get as much feedback as possible to know where to improve. Write to us on [Discord](https://colia.org/discord), in [Issues](https://github.com/colia-labs/sibundoy-translate/issues), in [Discussions](https://github.com/orgs/colia-labs/discussions) or at [hola@colia.org](mailto:hola@colia.org). It isn't a perfect model, but we keep working to improve it. We'd love your help!
 
 ---
 
