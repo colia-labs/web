@@ -18,6 +18,8 @@ const blog = defineCollection({
       portadaPie: z.string().optional(),
       // Colores de la bandera del lugar que da nombre al modelo, en franjas iguales de izquierda a derecha.
       banderaLugar: z.array(z.string()).optional(),
+      // Imagen para compartir en redes, de 1200 × 630 px, con ruta desde public/. Sin ella, la de la web.
+      compartir: z.string().optional(),
       borrador: z.boolean().default(false),
     }),
 });

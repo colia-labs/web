@@ -22,6 +22,7 @@ const ruta = `/blog/${nombreEntrada(entrada)}/`;
   bilingue={traducida}
   rutaOtroIdioma={traducida ? undefined : enIdioma("en", "/blog/")}
   tipo="article"
+  imagen={entrada.data.compartir}
 >
   <BlogEntrada idioma="es" entrada={entrada} />
 </Base>

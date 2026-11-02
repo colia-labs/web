@@ -26,6 +26,7 @@ npm test         # tests for the language redirect
 | `public/_redirects` | Short links on Cloudflare Pages, like `colia.org/discord` |
 | `functions/_middleware.js` | Cloudflare function that sends people to `/es/` when their browser prefers Spanish |
 | `herramientas/` | Scripts that generate the share image and the icons in `public/` |
+| `public/og/` | Share images for blog posts, set with `compartir` in each post |
 
 ## Writing a post
 
@@ -33,7 +34,7 @@ npm test         # tests for the language redirect
 2. Leave `borrador: true` while you write. Drafts only show with `npm run dev`.
 3. Change it to `borrador: false` to publish. The Blog link appears in the menu once there's at least one published post.
 
-The design rules are in [`DESIGN.md`](DESIGN.md). The brand rules are in the `colia-labs/colia` repo.
+The design rules are in [`DESIGN.md`](DESIGN.md). The brand rules (name, logo, color, type and voice) live in a repo that isn't public yet; `DESIGN.md` includes the ones the website needs.
 
 ## License
 

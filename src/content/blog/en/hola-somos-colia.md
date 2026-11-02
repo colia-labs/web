@@ -8,9 +8,10 @@ etiqueta: laboratorio
 portada: ../../../assets/ColIA.png
 portadaAlt: "Illustration of Colombian landscapes with the ColIA logo in the center: a macaw, a condor, a snow-capped peak, wax palms, a country house, coffee, an orchid, the sea and a pink river dolphin"
 portadaPie: "Colombia, from the mountains to the sea and the rainforest. Illustration."
-banderaLugar: ["#FFCD00", "#003087", "#C8102E"]
-# Borrador: se publica al cambiar esto a false. La fecha también es provisional.
-borrador: true
+# La bandera de Colombia, como en la marca: amarillo, azul y rojo en 2 : 1 : 1.
+banderaLugar: ["#FCD116", "#FCD116", "#003893", "#CE1126"]
+compartir: /og/hola-somos-colia.png
+borrador: false
 ---
 
 ## What ColIA is
