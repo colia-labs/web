@@ -58,5 +58,5 @@ ColIA isn't a company, but a collaborative project in progress. Anyone who joins
 - **Talk to us** in [GitHub Discussions](https://github.com/orgs/colia-labs/discussions): questions, ideas or whatever you're building.
 - **Contribute** by following the [contributing guide](https://github.com/colia-labs/.github/blob/main/CONTRIBUTING.md). It's not all code: asking questions, measuring on your computer or improving a text helps too.
 - **Read the [code of conduct](https://github.com/colia-labs/.github/blob/main/CODE_OF_CONDUCT.md)**: it's short.
-- **Follow us** on [X](https://x.com/colialabs) and [LinkedIn](https://www.linkedin.com/company/colia-labs).
+- **Follow us** on [X](https://x.com/colialabs), [Instagram](https://www.instagram.com/colialabs) and [LinkedIn](https://www.linkedin.com/company/colia-labs).
 - **Write to us** at [hola@colia.org](mailto:hola@colia.org). We read every message.

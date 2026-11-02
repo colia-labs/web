@@ -58,5 +58,5 @@ ColIA no es una empresa, sino un proyecto colaborativo en desarrollo. Quien se u
 - **Habla con nosotros** en [GitHub Discussions](https://github.com/orgs/colia-labs/discussions): preguntas, ideas o lo que estés construyendo.
 - **Aporta** siguiendo la [guía para aportar](https://github.com/colia-labs/.github/blob/main/CONTRIBUTING.md). No todo es código: preguntar, medir en tu equipo o mejorar un texto también ayuda.
 - **Lee las [normas de convivencia](https://github.com/colia-labs/.github/blob/main/CODE_OF_CONDUCT.md)**: son cortas.
-- **Síguenos** en [X](https://x.com/colialabs) y en [LinkedIn](https://www.linkedin.com/company/colia-labs).
+- **Síguenos** en [X](https://x.com/colialabs), en [Instagram](https://www.instagram.com/colialabs) y en [LinkedIn](https://www.linkedin.com/company/colia-labs).
 - **Escríbenos** a [hola@colia.org](mailto:hola@colia.org). Leemos todos los mensajes.

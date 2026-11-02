@@ -12,6 +12,7 @@ export const enlaces = {
   github: "https://github.com/colia-labs",
   huggingface: "https://huggingface.co/colia-labs",
   x: "https://x.com/colialabs",
+  instagram: "https://www.instagram.com/colialabs",
   linkedin: "https://www.linkedin.com/company/colia-labs",
   discord: "https://discord.gg/aMwvMETXAf",
   discussions: "https://github.com/orgs/colia-labs/discussions",
