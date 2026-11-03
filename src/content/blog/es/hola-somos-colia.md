@@ -31,8 +31,8 @@ ColIA es un lugar para mostrar al público el talento y la creatividad de nuestr
 
 Todo lo que se publica en ColIA cumple seis principios:
 
-1. **Abierto.** El código, los modelos y las recetas (ajustes para correr modelos, medidos en equipos reales) se publican con licencia abierta. Si partimos del modelo de otra empresa, lo decimos y publicamos con la licencia más abierta que nos permite.
-2. **Medido.** Cada afirmación lleva cifras, medidas en equipos reales: desde un portátil sin tarjeta gráfica hasta una estación de trabajo con varias.
+1. **Abierto.** El código, los modelos y las recetas (ajustes para correr modelos, medidos en equipos comunes) se publican con licencia abierta. Si partimos del modelo de otra empresa, lo decimos y publicamos con la licencia más abierta que nos permite.
+2. **Medido.** Cada afirmación lleva cifras, medidas en equipos comunes: desde un portátil sin tarjeta gráfica hasta una estación de trabajo con varias.
 3. **Bilingüe.** Todo sale en inglés y en español. El español es nuestro idioma: lo escribimos nativo, no traducido.
 4. **Local.** Lo que hacemos funciona en tu equipo, sin depender de una nube, y tus datos no salen de él.
 5. **Comunidad.** Quien quiera aprender, explorar o aportar es bienvenido, sepa mucho o poco.
@@ -43,7 +43,7 @@ Todo lo que se publica en ColIA cumple seis principios:
 Estamos preparando dos cosas:
 
 - **Un modelo** pequeño que funciona en tu propio equipo y lleva el nombre de un lugar de Colombia. Llega pronto.
-- **Una app** para usar modelos de IA en tu propio equipo, con ajustes medidos en equipos reales. Está en desarrollo.
+- **Una app** para usar modelos de IA en tu propio equipo, con ajustes medidos en equipos comunes. Está en desarrollo.
 
 Los presentaremos aquí en el blog en los próximos días. Si quieres enterarte primero, entra al [Discord](https://colia.org/discord).
 

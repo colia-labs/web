@@ -31,8 +31,8 @@ ColIA is a place to show the talent and creativity of its members. We're not aft
 
 Everything published at ColIA follows six principles:
 
-1. **Open.** Code, models and recipes (settings for running models, measured on real hardware) are published under open licenses. When we start from another company's model, we say so and publish under the most open license it allows.
-2. **Measured.** Every claim comes with numbers, measured on real hardware: from a laptop without a graphics card to a workstation with several.
+1. **Open.** Code, models and recipes (settings for running models, measured on consumer hardware) are published under open licenses. When we start from another company's model, we say so and publish under the most open license it allows.
+2. **Measured.** Every claim comes with numbers, measured on consumer hardware: from a laptop without a graphics card to a workstation with several.
 3. **Bilingual.** Everything ships in English and Spanish. Spanish is our language: we write it natively, not as a translation.
 4. **Local.** What we make runs on your computer, without depending on a cloud, and your data never leaves it.
 5. **Community.** Anyone who wants to learn, explore or contribute is welcome, whatever they know.
@@ -43,7 +43,7 @@ Everything published at ColIA follows six principles:
 We're preparing two things:
 
 - **A model**: a small one that runs on your own computer and is named after a place in Colombia. It's coming soon.
-- **An app** to use AI models on your own computer, with settings measured on real hardware. It's in development.
+- **An app** to use AI models on your own computer, with settings measured on consumer hardware. It's in development.
 
 We'll introduce them here on the blog over the next few days. If you want to be the first to know, join our [Discord](https://colia.org/discord).
 
