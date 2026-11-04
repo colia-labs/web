@@ -3,7 +3,7 @@ titulo: "Hi! We're ColIA"
 nombre: "ColIA"
 entradilla: "An open-source AI lab and community from Colombia. We learn by building in the open, and what we make runs on your own computer."
 autor: "Rubén Salas"
-fecha: 2026-11-02
+fecha: 2026-11-04
 etiqueta: laboratorio
 portada: ../../../assets/ColIA.png
 portadaAlt: "Illustration of Colombian landscapes with the ColIA logo in the center: a macaw, a condor, a snow-capped peak, wax palms, a country house, coffee, an orchid, the sea and a pink river dolphin"

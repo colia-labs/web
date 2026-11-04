@@ -3,7 +3,7 @@ titulo: "¡Hola! Somos ColIA"
 nombre: "ColIA"
 entradilla: "Un laboratorio y una comunidad colombiana de IA abierta. Aprendemos construyendo en público y lo que hacemos funciona en tu propio equipo."
 autor: "Rubén Salas"
-fecha: 2026-11-02
+fecha: 2026-11-04
 etiqueta: laboratorio
 portada: ../../../assets/ColIA.png
 portadaAlt: "Ilustración de paisajes de Colombia con el logo de ColIA en el centro: una guacamaya, un cóndor, un nevado, palmas de cera, una casa de campo, café, una orquídea, el mar y un delfín rosado de río"
