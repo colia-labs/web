@@ -9,7 +9,7 @@ portada: ../../../assets/ColIA.png
 portadaAlt: "Ilustración de paisajes de Colombia con el logo de ColIA en el centro: una guacamaya, un cóndor, un nevado, palmas de cera, una casa de campo, café, una orquídea, el mar y un delfín rosado de río"
 portadaPie: "Colombia, de las montañas al mar y la selva. Ilustración."
 banderaLugar: ["#FCD116", "#FCD116", "#003893", "#CE1126"]
-compartir: /og/hola-somos-colia.png
+compartir: /og/hola-somos-colia.jpg
 borrador: false
 ---
 

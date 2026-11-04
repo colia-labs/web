@@ -9,7 +9,7 @@ portada: ../../../assets/ColIA.png
 portadaAlt: "Illustration of Colombian landscapes with the ColIA logo in the center: a macaw, a condor, a snow-capped peak, wax palms, a country house, coffee, an orchid, the sea and a pink river dolphin"
 portadaPie: "Colombia, from the mountains to the sea and the rainforest. Illustration."
 banderaLugar: ["#FCD116", "#FCD116", "#003893", "#CE1126"]
-compartir: /og/hola-somos-colia.png
+compartir: /og/hola-somos-colia.jpg
 borrador: false
 ---
 

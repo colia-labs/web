@@ -17,7 +17,9 @@ async function capturar(html, ancho, alto, salida, escala = 1) {
   if (html.startsWith("file:")) await pagina.goto(html, { waitUntil: "networkidle" });
   else await pagina.setContent(html, { waitUntil: "networkidle" });
   await pagina.evaluate(() => document.fonts.ready);
-  await pagina.screenshot({ path: fileURLToPath(new URL(salida, raiz)), omitBackground: true });
+  // La imagen de compartir va en JPEG: WhatsApp no muestra las de más de unos 300 KB, y en PNG pesaba 800 KB.
+  const opciones = salida.endsWith(".jpg") ? { type: "jpeg", quality: 85 } : { omitBackground: true };
+  await pagina.screenshot({ path: fileURLToPath(new URL(salida, raiz)), ...opciones });
   await pagina.close();
   console.log(`Generada: ${salida}`);
 }
@@ -27,7 +29,7 @@ const svg = (archivo, lado) => readFileSync(fileURLToPath(new URL(archivo, raiz)
 const sola = (contenido) => `<html><body style="margin:0;background:transparent">${contenido}</body></html>`;
 
 try {
-  await capturar(pathToFileURL(fileURLToPath(new URL("herramientas/compartir.html", raiz))).href, 1200, 630, "public/og.png");
+  await capturar(pathToFileURL(fileURLToPath(new URL("herramientas/compartir.html", raiz))).href, 1200, 630, "public/og.jpg");
   await capturar(sola(svg("public/favicon.svg", 32)), 32, 32, "public/favicon-32.png");
   // iOS redondea las esquinas por su cuenta: el icono va cuadrado, como avatar.svg de la marca.
   await capturar(sola(svg("herramientas/avatar.svg", 180).replace("<svg ", '<svg shape-rendering="crispEdges" ')), 180, 180, "public/apple-touch-icon.png");

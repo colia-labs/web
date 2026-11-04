@@ -17,11 +17,11 @@ interface Props {
   /** Si la página existe en los dos idiomas, para las etiquetas hreflang. */
   bilingue?: boolean;
   tipo?: "website" | "article";
-  /** Imagen para compartir, de 1200 × 630 px, con ruta desde public/. Por defecto, «/og.png». */
+  /** Imagen para compartir, de 1200 × 630 px, con ruta desde public/. Por defecto, «/og.jpg». En JPEG: WhatsApp no muestra las imágenes de más de unos 300 KB. */
   imagen?: string;
 }
 
-const { idioma, titulo, descripcion, ruta, rutaOtroIdioma, bilingue = true, tipo = "website", imagen: rutaImagen = "/og.png" } = Astro.props;
+const { idioma, titulo, descripcion, ruta, rutaOtroIdioma, bilingue = true, tipo = "website", imagen: rutaImagen = "/og.jpg" } = Astro.props;
 const t = textos[idioma];
 const otro: Idioma = idioma === "en" ? "es" : "en";
 const tituloCompleto = titulo ? `${titulo} · ColIA` : "ColIA";
