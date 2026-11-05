@@ -26,6 +26,7 @@ npm test         # tests for the language redirect
 | `public/_redirects` | Short links on Cloudflare Pages, like `colia.org/discord` |
 | `functions/_middleware.js` | Cloudflare function that sends people to `/es/` when their browser prefers Spanish |
 | `herramientas/` | Scripts that generate the share image and the icons in `public/` |
+| `public/og/` | Share images for blog posts, set with `compartir` in each post. JPEG under 300 KB, or WhatsApp won't show them |
 
 ## Writing a post
 
@@ -33,7 +34,7 @@ npm test         # tests for the language redirect
 2. Leave `borrador: true` while you write. Drafts only show with `npm run dev`.
 3. Change it to `borrador: false` to publish. The Blog link appears in the menu once there's at least one published post.
 
-The design rules are in [`DESIGN.md`](DESIGN.md). The brand rules are in the `colia-labs/colia` repo.
+The design rules are in [`DESIGN.md`](DESIGN.md). The brand rules (name, logo, color, type and voice) live in a repo that isn't public yet; `DESIGN.md` includes the ones the website needs.
 
 ## License
 
@@ -44,7 +45,7 @@ Each part of this repo has its own terms:
 | Code: everything in `src/` except `src/content/` and `src/assets/`, plus `functions/`, `herramientas/` and the config files | [MIT](LICENSE) |
 | Texts: the blog posts in `src/content/` and the texts in `src/i18n/textos.ts` | [CC BY 4.0](LICENSE-CONTENT). You can copy, translate and adapt them if you credit ColIA |
 | The ColIA name, the logo and the vueltiao weave | All rights reserved. They are not covered by either license |
-| The illustrations in `src/assets/` and `public/og.png` | Not licensed for reuse. They were generated with Canva |
+| The illustrations in `src/assets/` and `public/og.jpg` | Not licensed for reuse. They were generated with Canva |
 | The Atkinson Hyperlegible fonts in `public/fuentes/` | [SIL Open Font License 1.1](public/fuentes/), by their authors |
 | The social network logos | Trademarks of their owners. The drawings come from [Simple Icons](https://simpleicons.org) (CC0) |
 

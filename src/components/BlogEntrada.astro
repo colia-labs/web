@@ -62,8 +62,7 @@ const franja = d.banderaLugar
   <div class="articulo">
     <h2>{deLaboratorio ? t.blog.sumarseTitulo : t.blog.cierreTitulo}</h2>
     <p>{deLaboratorio ? t.blog.sumarseTexto : t.blog.cierreTexto}</p>
-    <p><a href={enlaces.discord}>{t.comunidad.discord}</a></p>
-    <p><a href={enlaces.discussions}>{t.blog.cierreEnlace}</a></p>
+    <p>{t.comunidad.charla.antes} <a href={enlaces.discord}>Discord</a> {t.comunidad.charla.o} <a href={enlaces.discussions}>GitHub Discussions</a></p>
   </div>
 </section>
 
