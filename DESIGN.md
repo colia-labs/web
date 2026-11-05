@@ -215,7 +215,7 @@ Son ilustraciones generadas con IA. Para la web final se pueden sustituir por fo
 
 **Fila de proyecto.** Nombre en `item-title`, estado a la derecha, descripción en texto secundario y, debajo, la línea de la bandera.
 
-**Línea de la bandera del lugar.** En la entrada del blog que presenta un modelo, bajo su nombre en el título, va una línea de 6 px con los colores de la bandera del lugar que le da nombre. Sibundoy: verde `#1E7B34`, amarillo `#F2D21B` y blanco `#FFFFFF`, en franjas iguales, según Rubén. Los tonos del verde y el amarillo están ajustados a la paleta de la web.
+**Línea de la bandera del lugar.** En la entrada del blog que presenta un modelo, bajo su nombre en el título, va una línea de 6 px con los colores de la bandera del lugar que le da nombre. Sibundoy: amarillo `#F2D21B`, blanco `#FFFFFF` y verde `#1E7B34`, en ese orden y en franjas iguales, según Rubén. Los tonos del verde y el amarillo están ajustados a la paleta de la web.
 
 **Estado del proyecto** («In development», «Available»). Punto ámbar de 6 px y texto secundario de 14 px.
 

@@ -8,7 +8,7 @@ etiqueta: modelo
 portada: ../../../assets/sibundoy1.png
 portadaAlt: "Illustration of the Sibundoy Valley, in Putumayo, with green fields and misty mountains"
 portadaPie: "The Sibundoy Valley, in Putumayo, Colombia. Illustration."
-banderaLugar: ["#1E7B34", "#F2D21B", "#FFFFFF"]
+banderaLugar: ["#F2D21B", "#FFFFFF", "#1E7B34"]
 compartir: /og/sibundoy-translate-1-7b.jpg
 borrador: false
 ---
