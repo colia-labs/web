@@ -3,14 +3,14 @@ titulo: "Introducing Sibundoy-Translate-1.7B"
 nombre: "Sibundoy-Translate-1.7B"
 entradilla: "Our first model translates English into Spanish. It has 1.7 billion parameters and is built to run on the computers you already have. Making it taught us a lot, and we hope you find it useful."
 autor: "Rubén Salas"
-fecha: 2026-11-03
+fecha: 2026-11-05
 etiqueta: modelo
 portada: ../../../assets/sibundoy1.png
 portadaAlt: "Illustration of the Sibundoy Valley, in Putumayo, with green fields and misty mountains"
 portadaPie: "The Sibundoy Valley, in Putumayo, Colombia. Illustration."
 banderaLugar: ["#1E7B34", "#F2D21B", "#FFFFFF"]
-# Borrador: se publica al cambiar esto a false. La fecha también es provisional.
-borrador: true
+compartir: /og/sibundoy-translate-1-7b.jpg
+borrador: false
 ---
 
 <p class="aviso">Looking for the numbers, the recipe to run it or how we trained it? It's all in the <a href="#technical-section">technical section</a>, further down.</p>

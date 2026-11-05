@@ -1,6 +1,6 @@
 ---
 import { getImage } from "astro:assets";
-import { textos, enlaces, type Idioma } from "../i18n/textos";
+import { textos, enlaces, enIdioma, type Idioma } from "../i18n/textos";
 import portada from "../assets/portada.png";
 import biodiversidad from "../assets/biodiversidad.png";
 
@@ -34,7 +34,7 @@ const fondoBanda = await getImage({ src: biodiversidad, format: "webp", width: 1
     <div class="contenido">
       <ul class="proyectos">
         <li>
-          <div class="fila"><h3>{t.proyectos.modelo}</h3><span class="estado">{t.proyectos.pronto}</span></div>
+          <div class="fila"><h3><a href={enIdioma(idioma, "/blog/sibundoy-translate-1-7b/")}>{t.proyectos.modelo}</a></h3><span class="estado">{t.proyectos.disponible}</span></div>
           <p>{t.proyectos.modeloTexto}</p>
         </li>
         <li>

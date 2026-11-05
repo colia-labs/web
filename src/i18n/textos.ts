@@ -36,12 +36,12 @@ export const textos = {
     proyectos: {
       titulo: "What we make",
       desarrollo: "In development",
-      pronto: "Coming soon",
+      disponible: "Available",
       app: "An app",
       appTexto: "To use AI models on your own computer, with settings measured on consumer hardware.",
-      modelo: "A model",
-      modeloTexto: "A small model that runs on your own computer.",
-      aviso: "We'll introduce both here and on the blog over the next few days.",
+      modelo: "Sibundoy-Translate-1.7B",
+      modeloTexto: "Our first model. It translates English into Spanish on your own computer, and keeps HTML and Markdown intact.",
+      aviso: "We'll introduce the app here and on the blog when it's ready.",
       avisoEnlace: "Be the first to know on Discord",
     },
     principios: {
@@ -100,12 +100,12 @@ export const textos = {
     proyectos: {
       titulo: "Lo que hacemos",
       desarrollo: "En desarrollo",
-      pronto: "Próximamente",
+      disponible: "Disponible",
       app: "Una app",
       appTexto: "Para usar modelos de IA en tu propio equipo, con ajustes medidos en equipos comunes.",
-      modelo: "Un modelo",
-      modeloTexto: "Un modelo pequeño que funciona en tu propio equipo.",
-      aviso: "Los presentaremos aquí y en el blog en los próximos días.",
+      modelo: "Sibundoy-Translate-1.7B",
+      modeloTexto: "Nuestro primer modelo. Traduce de inglés a español en tu propio equipo y conserva el HTML y el Markdown.",
+      aviso: "Presentaremos la app aquí y en el blog cuando esté lista.",
       avisoEnlace: "Entérate primero en Discord",
     },
     principios: {
